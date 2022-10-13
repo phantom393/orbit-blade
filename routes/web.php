@@ -213,3 +213,6 @@ Route::get('/timesheet/timesheetemployeereportall', function () {
 Route::get('/eclaim/myclaim', function () {
     return view('eclaimmyclaim');
 });
+Route::get('/setting/general', function () {
+    return view('settinggeneral');
+});
