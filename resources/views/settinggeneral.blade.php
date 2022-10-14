@@ -648,7 +648,7 @@
 							<h4>Notify approver when a claim is submitted?</h4>
 								<div class="col-sm-6">
 									<div class="form-check form-switch">
-										<input class="form-check-input" {{ ($companion->mainCompanion ?? '') ? 'checked' : '' }} name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
+										<input class="form-check-input"  name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
 										<label class="form-check-label" for="set-main">Send notification email</label> 
 										<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="When this setting is on, approver will receive an email whenever a claim is submitted."></i>
 	
@@ -662,7 +662,7 @@
 							<h4>Disable user request</h4>
 							<div class="col-sm-6">
 								<div class="form-check form-switch">
-									<input class="form-check-input" {{ ($companion->mainCompanion ?? '') ? 'checked' : '' }} name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
+									<input class="form-check-input"  name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
 									<label class="form-check-label" for="set-main">Disable user request ?</label>
 									<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip2"   title="When this setting is on,users are unable to submit their claim&#010;e.g System on maintenance"></i>
 								</div>
@@ -698,28 +698,42 @@
 					<h4>Subsistence Allowence</h4>
 					<br>
 					
-					<button type="button" class="btn btn-white mt-3 mb-3" data-bs-toggle="modal" id="myModal1" data-bs-target="#exampleModalCenter"><i class="fa fa-plus"></i>Area</button>
-					<table id="settinggeneral" style="width: 50%" class="table table-striped table-bordered align-middle">
+					<button type="button" class="btn btn-white mt-3 mb-3" data-bs-toggle="modal" id="myModal1" data-bs-target="#exampleModalCenter"><i class="fa fa-plus"></i> Area</button>
+					<table id="tableSaveArea" style="width: 50%" class="table table-striped table-bordered align-middle">
 						<thead>
 						  <tr>	
-							<th width="1%"></th>
-							<th width="1%" data-orderable="false">Action</th>
+							<th  data-orderable="false">Action</th>
 							<th class="text-nowrap">No</th>
 							<th class="text-nowrap">Area</th>
 						  </tr>
 						</thead>
 						<tbody>
 							<tr>
-								<td>1</td>
+		
 								<td>
-									<i class="fa fa-pencil" style="color:rgba(0, 81, 255, 0.904)">
-									<i class="a-solid fa-trash-can" style="color:rgba(219, 26, 26, 0.904)">
-										{{-- <i class="fa fa-question-circle"  style="color:rgba(0, 81, 255, 0.904)"></i> --}}
-										
-										
+									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
 								</td>
-								<td>tedst1</td>
-								<td>tedst2</td>
+								<td>1</td>
+								<td>Malaysia</td>
+							</tr>
+							<tr>
+								
+								<td>
+									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+								</td>
+								<td>2</td>
+								<td>MIDDLE EAST</td>
+							</tr>
+							<tr>
+								
+								<td>
+									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+								</td>
+								<td>3</td>
+								<td>SINGAPORE/BRUNEI</td>
 							</tr>
 						</tbody>
 					  </table>
@@ -728,8 +742,41 @@
 			<div>
 				<button class="btn btn-primary" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
 				<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Submit</button>
+				
+			</div>
+
+			
+  
+  <!-- Modal -->
+  {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Add Area</h5>
+		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<form id="submitarea">
+				<div class="row mb-3">
+					<label for="Area" class="col-sm-2 col-form-label">Area*</label><br>
+					<div class="col-sm-6">
+					<input type="text" class="form-control"  id="Area" name="area"  value="USA/CANADA">
+		</div>
+	  </div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  {{-- <button class="btn btn-primary" id="saveAddArea">Save changes</button> --}}
+		  {{-- <button id="saveAddArea">Save</button> --}}
+		  {{-- <button id="name">test</button> --}}
+		  {{-- <button class="btn btn-primary" id="add-row">Add Row</button> --}}
+		{{-- </form>
+		</div>
+	  </div>
 	</div>
-	
+  </div>
+</div>  --}}
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -737,22 +784,61 @@
 	  <div class="modal-content">
 		<div class="modal-header">
 		  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		  </button>
 		</div>
 		<div class="modal-body">
-		  ...
+			<form>
+				<div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Area*</label><br>
+					<div class="col-sm-6">
+					<input type="text" class="form-control" id="Area" value="USA/CANADA">
+				</form>
+		</div>
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		  <button type= "button" id="saveArea" class="btn btn-primary" onclick="AddRow()">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+</div>
+	
+  
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<form>
+				<div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Area*</label><br>
+					<div class="col-sm-6">
+					<input type="text" class="form-control" id="" value="USA/CANADA">
+			 </form>
+		</div>
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
 		  <button type="button" class="btn btn-primary">Save changes</button>
 		</div>
 	  </div>
 	</div>
   </div>
+</div>
 	
 
+  
+  
 
 		
 		<!-- BEGIN scroll-top-btn -->
@@ -815,9 +901,99 @@
 					});
 			$('[data-toggle="tooltip1"]').tooltip();  
 			$('[data-toggle="tooltip2"]').tooltip();   
-	
-	
-			
+
+
+			 // Add new row
+			//  $("#saveAddArea").click(function(){
+            //     var area = $("#Area").val();
+            //     // var lastname = $("#lastname").val();
+            //     // var email = $("#email").val();
+            //     $(".table tbody tr").last().after(
+            //         '<tr class="fadetext">'+
+            //             // '<td><input type="checkbox" id="select-row"></td>'+
+            //             // '<td>'+firstname+'</td>'+
+            //             // '<td>'+lastname+'</td>'+
+            //             // '<td>'+email+'</td>'+
+			// 			'<td>'+area+'</td>'+
+            //         '</tr>'
+            //     );
+            // })
 					
 		});
+
+		// var entry = document.getElementById("saveArea");
+		// entry.addEventListener("click", displayDetails);
+
+		// var row = 3;
+
+		// function displayDetails() {
+		// 	var area = document.getElementById("Area").value;
+
+			
+
+		// }
+		// var display = document.getElementById("tableSaveAre")
+		// var newRow = display.insertRow(row);
+
+		// var cell1 = newRow.insertCell(2)
+
+		// var cell1 = newRow.insertCell(2);
 	</script>
+
+	
+
+{{-- <script type="text/javascript">
+            
+	document.getElementById("saveArea").onclick=function()
+	{
+		document.getElementById("tableSaveArea").style.display="block";
+		
+		var table = document.getElementById("table");
+		var row = table.insertRow(-1);
+		// var date = row.insertCell(0);
+		// var desc = row.insertCell(1);
+		var area = row.insertCell(2);
+		// date.innerHTML = document.getElementById("").value;
+		// desc.innerHTML = document.getElementById("").value;
+		area.innerHTML = document.getElementById("Area").value;
+		
+		return false;
+	}
+
+</script> --}}
+
+<script>
+		
+	var list1 = [];
+	var list2 = [];
+	var list3 = [];
+	var list4 = [];
+
+	var n = 1;
+	var x = 0;
+
+	function AddRow(){
+
+		var AddRown = document.getElementById('saveArea');
+		var NewRow = AddRown.insertRow(n);
+
+		list1[x] = document.getElementById("fname").value;
+		list2[x] = document.getElementById("lname").value;
+		list3[x] = document.getElementById("Area").value;
+		list4[x] = document.getElementById("age").value;
+
+		var cel1 = NewRow.insertCell(0);
+		var cel2 = NewRow.insertCell(1);
+		var cel3 = NewRow.insertCell(2);
+		var cel4 = NewRow.insertCell(3);
+
+		// cel1.innerHTML = list1[x];
+		// cel2.innerHTML = list2[x];
+		cel3.innerHTML = list3[x];
+		// cel4.innerHTML = list4[x];
+
+		n++;
+		x++;
+	}
+
+</script>
