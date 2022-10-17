@@ -643,23 +643,21 @@
 					<h3>Claim Settings</h3>
 					<br>
 					
+					
 					<div class="row">	
 						<div class="col-sm-6">
-							<h4>Notify approver when a claim is submitted?</h4>
+							<h5>Notify approver when a claim is submitted?</h5>
 								<div class="col-sm-6">
 									<div class="form-check form-switch">
 										<input class="form-check-input"  name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
 										<label class="form-check-label" for="set-main">Send notification email</label> 
 										<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="When this setting is on, approver will receive an email whenever a claim is submitted."></i>
-	
-										
-										  
 									</div>
 								</div>
 						</div>
 		
 						<div class="col-sm-6">
-							<h4>Disable user request</h4>
+							<h5>Disable user request</h5>
 							<div class="col-sm-6">
 								<div class="form-check form-switch">
 									<input class="form-check-input"  name="mainCompanion" value="{{ $companion->mainCompanion ?? '' }}" type="checkbox" role="switch" id="set-main" checked>
@@ -667,16 +665,7 @@
 									<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip2"   title="When this setting is on,users are unable to submit their claim&#010;e.g System on maintenance"></i>
 								</div>
 						</div>
-						{{-- <div class="tooltip-wrap">
-							<img src="/some/image/file.jpg" alt="Some Image" />
-							<div class="tooltip-content">
-							  Here is some content for the tooltip
-							</div> 
-						  </div> --}}
-						
 					</div>
-			
-			
 			</div>
 	  </div>
 	  			<br>
@@ -688,101 +677,74 @@
 					<form>
 						<div class="row mb-3">
 						  <label for="inputEmail3" class="col-sm-2 col-form-label">Maximum Paid Out(%)*</label>
-						  <div class="col-sm-3">
+						  <div class="col-sm-4">
 							<input type="email" class="form-control" id="inputEmail3" value="75">
 						  </div>
 						</div>
 					</form>
 					
 					<br>
-					<h4>Subsistence Allowence</h4>
+					<h5>Subsistence Allowence</h5>
 					<br>
 					
 					<button type="button" class="btn btn-white mt-3 mb-3" data-bs-toggle="modal" id="myModal1" data-bs-target="#exampleModalCenter"><i class="fa fa-plus"></i> Area</button>
-					<table id="tableSaveArea" style="width: 50%" class="table table-striped table-bordered align-middle">
-						<thead>
-						  <tr>	
-							<th  data-orderable="false">Action</th>
-							<th class="text-nowrap">No</th>
-							<th class="text-nowrap">Area</th>
-						  </tr>
-						</thead>
-						<tbody>
-							<tr>
-		
-								<td>
-									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-								</td>
-								<td>1</td>
-								<td>Malaysia</td>
-							</tr>
-							<tr>
-								
-								<td>
-									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-								</td>
-								<td>2</td>
-								<td>MIDDLE EAST</td>
-							</tr>
-							<tr>
-								
-								<td>
-									<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-									<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-								</td>
-								<td>3</td>
-								<td>SINGAPORE/BRUNEI</td>
-							</tr>
-						</tbody>
-					  </table>
+						<div class="col-sm-6">
+						<table id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+							<thead>
+							  <tr>	
+								<th  data-orderable="false">Action</th>
+								{{-- <th class="text-nowrap">No</th> --}}
+								<th class="text-nowrap">Area</th>
+							  </tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+									</td>
+									{{-- <td>1</td> --}}
+									<td>Malaysia</td>
+								</tr>
+								<tr>
+									
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+									</td>
+									{{-- <td>2</td> --}}
+									<td>MIDDLE EAST</td>
+								</tr>
+								<tr>
+									
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
+										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
+									</td>
+									{{-- <td>3</td> --}}
+									<td>SINGAPORE/BRUNEI</td>
+								</tr>
+							</tbody>
+						  </table>
+						</div>
 			</div>
 			<br>
-			<div>
-				<button class="btn btn-primary" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
-				<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Submit</button>
+				<div class="row">
+				  <div class="col align-self-start">
+					<button class="btn btn-primary" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+				  </div>
+				  
+				  <div class="col d-flex justify-content-end">
+					<button class="btn btn-primary" type="submit"><i class="fa fa-save"></i> Submit</button>
+				  </div>
+				</div>
 				
-			</div>
-
-			
-  
-  <!-- Modal -->
-  {{-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLongTitle">Add Area</h5>
-		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<form id="submitarea">
-				<div class="row mb-3">
-					<label for="Area" class="col-sm-2 col-form-label">Area*</label><br>
-					<div class="col-sm-6">
-					<input type="text" class="form-control"  id="Area" name="area"  value="USA/CANADA">
-		</div>
-	  </div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		  {{-- <button class="btn btn-primary" id="saveAddArea">Save changes</button> --}}
-		  {{-- <button id="saveAddArea">Save</button> --}}
-		  {{-- <button id="name">test</button> --}}
-		  {{-- <button class="btn btn-primary" id="add-row">Add Row</button> --}}
-		{{-- </form>
-		</div>
-	  </div>
-	</div>
-  </div>
-</div>  --}}
 
   <!-- Modal -->
   <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 	<div class="modal-dialog modal-dialog-centered" role="document">
 	  <div class="modal-content">
-		<div class="modal-header">
+		<div class="modal-header">	
 		  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
 		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -799,7 +761,7 @@
 		</div>
 		<div class="modal-footer">
 		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		  <button type= "button" id="saveArea" class="btn btn-primary" onclick="AddRow()">Save changes</button>
+		  <button type= "button" id="saveArea" class="btn btn-primary" data-bs-dismiss="modal"> Save changes</button>
 		</div>
 	  </div>
 	</div>
@@ -891,7 +853,7 @@
 
 	<script>
 		$(document).ready(function () {
-			$('#settinggeneral')
+			$('#tableSaveArea')
 					.dataTable({
 						"responsive": true,
 						"searching": false,
@@ -903,97 +865,48 @@
 			$('[data-toggle="tooltip2"]').tooltip();   
 
 
-			 // Add new row
-			//  $("#saveAddArea").click(function(){
-            //     var area = $("#Area").val();
-            //     // var lastname = $("#lastname").val();
-            //     // var email = $("#email").val();
-            //     $(".table tbody tr").last().after(
-            //         '<tr class="fadetext">'+
-            //             // '<td><input type="checkbox" id="select-row"></td>'+
-            //             // '<td>'+firstname+'</td>'+
-            //             // '<td>'+lastname+'</td>'+
-            //             // '<td>'+email+'</td>'+
-			// 			'<td>'+area+'</td>'+
-            //         '</tr>'
-            //     );
-            // })
-					
+			 
 		});
 
-		// var entry = document.getElementById("saveArea");
-		// entry.addEventListener("click", displayDetails);
+		$("#saveArea").click(function() {
 
-		// var row = 3;
+var addtypelogactivityName = document.getElementById('Area').value;
 
-		// function displayDetails() {
-		// 	var area = document.getElementById("Area").value;
+if (addtypelogactivityName == "") {
+	document.getElementById('Area');
+	return;
+} else {
 
-			
-
-		// }
-		// var display = document.getElementById("tableSaveAre")
-		// var newRow = display.insertRow(row);
-
-		// var cell1 = newRow.insertCell(2)
-
-		// var cell1 = newRow.insertCell(2);
-	</script>
+	let table = document.getElementById('tableSaveArea');
+	// Insert a row at the end of the table
+	let newRow = table.insertRow(-1);
+	var l = table.rows.length - 1;
+	
+	//Col 3 = Delete Button
+	table.rows[l].insertCell(0);
+	table.rows[l].cells[0].innerHTML = "<input hidden name='Area' value='" + addtypelogactivityName + "' /><button type='button' class='btn btn-outline-green' onclick='editRow(this);' id='btnDelete' size='1' height='1' ><i class='fa fa-pencil'></i></button> <button type='button' class='btn btn-outline-danger' onclick='delRow(this);' id='btnDelete' size='1' height='1' ><i class='fa fa-trash'></i></button>";
+	
+	
+	//Col 1 = addtypelogactivityName
+	table.rows[l].insertCell(1);
+	table.rows[l].cells[1].innerHTML = addtypelogactivityName;
 
 	
 
-{{-- <script type="text/javascript">
-            
-	document.getElementById("saveArea").onclick=function()
-	{
-		document.getElementById("tableSaveArea").style.display="block";
-		
-		var table = document.getElementById("table");
-		var row = table.insertRow(-1);
-		// var date = row.insertCell(0);
-		// var desc = row.insertCell(1);
-		var area = row.insertCell(2);
-		// date.innerHTML = document.getElementById("").value;
-		// desc.innerHTML = document.getElementById("").value;
-		area.innerHTML = document.getElementById("Area").value;
-		
-		return false;
+	//Clear input
+
+
+}
+});
+
+
+	function delRow(btn) {
+    var row = btn.parentNode.parentNode;
+    row.parentNode.removeChild(row);
 	}
 
-</script> --}}
-
-<script>
-		
-	var list1 = [];
-	var list2 = [];
-	var list3 = [];
-	var list4 = [];
-
-	var n = 1;
-	var x = 0;
-
-	function AddRow(){
-
-		var AddRown = document.getElementById('saveArea');
-		var NewRow = AddRown.insertRow(n);
-
-		list1[x] = document.getElementById("fname").value;
-		list2[x] = document.getElementById("lname").value;
-		list3[x] = document.getElementById("Area").value;
-		list4[x] = document.getElementById("age").value;
-
-		var cel1 = NewRow.insertCell(0);
-		var cel2 = NewRow.insertCell(1);
-		var cel3 = NewRow.insertCell(2);
-		var cel4 = NewRow.insertCell(3);
-
-		// cel1.innerHTML = list1[x];
-		// cel2.innerHTML = list2[x];
-		cel3.innerHTML = list3[x];
-		// cel4.innerHTML = list4[x];
-
-		n++;
-		x++;
+	function editRow() {
+		$('#exampleModalCenter').modal('show');
 	}
+	</script>
 
-</script>
