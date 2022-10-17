@@ -35,85 +35,43 @@
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-		.tooltip {
-		  position: relative;
-		  display: inline-block;
-		  border-bottom: 1px dotted black;
-		}
+            /* form  { display: table;      }
+p     { display: table-row;  }
+label { display: table-cell; }
+input { display: table-cell; } */
+
+
+
+#address input {
+    display: inline-block;
+}
+
+#address label {
+    display: inline-block;
+    width: 20em;
+    text-align: left;
+    padding-right: 0.5em;
+}
+
+div.absolute {
+  position: absolute;
+  top: 650px;
+  right: 20px;
+  /* width: 200px; */
+  /* height: 100px; */
+  /* border: 3px solid #73AD21; */
+}
+
+div.absolute1 {
+  position: absolute;
+  top: 600px;
+  left: 20px;
+  /* width: 200px; */
+  /* height: 100px; */
+  /* border: 3px solid #73AD21; */
+}
+</style>
 		
-		.tooltip .tooltiptext {
-		  visibility: hidden;
-		  width: 120px;
-		  background-color: black;
-		  color: #fff;
-		  text-align: center;
-		  border-radius: 6px;
-		  padding: 5px 0;
-		
-		  /* Position the tooltip */
-		  position: absolute;
-		  z-index: 1;
-		}
-
-		.tooltip-inner {     
-			white-space: pre-wrap; 
-		}
-
-		.dataTables_filter {
-		display: none;
-		}
-
-		/* .switch label input
-		#set-main[type="checkbox"]:checked + #profile-switch-lever.lever::after {
-    	background-color: #fff;
-		} */
-		
-		/* .checkbox:checked:before{
-background-color:green;
-} */
-
-/* .custom-control-label:before{
-  background-color:red;
-}
-.custom-checkbox .custom-control-input:checked~.custom-control-label::before{
-  background-color:black;
-}
-		 */
-		 /* input[type='checkbox'] {
-    accent-color: red;
-} */
-
-/* .custom-checkbox .form-check-input:checked ~ .custom-control-label::before {
-  background-color: green!important;
-} */
-
-.form-check-input:checked {
-    background-color: black;
-    border-color: white;
-}
-
-/* .form-check-input:{
-    background-color: black;
-    border-color: white;
-} */
-
-.form-switch .form-check-input {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='black'/%3e%3c/svg%3e");
-}
-.form-switch .form-check-input:focus {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='black'/%3e%3c/svg%3e");
-}
-
-.btn-light{
-    /* background-color: #8064A2; */
-	color: black
-}
-
-
-		
-		</style>
-		</head>
-		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -685,173 +643,63 @@ background-color:green;
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | General</h1>
+	<h1 class="page-header">Setting | Claims Date</h1>
 			<div class="panel-body">
 				<div class="form-control">	
 				
-					<h3>Claim Settings</h3>
+					<h3>Configure Claim Date</h3>
 					<br>
-					
-					
-					<div class="row">	
-						<div class="col-sm-6">
-							<h5>Notify approver when a claim is submitted ?</h5>
-								<div class="col-sm-6">
-									<div class="form-check form-switch">
-										<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id="set-main"  checked>
-										<label class="form-check-label" for="set-main">Send notification email</label> 
-										<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="When this setting is on, approver will receive an email whenever a claim is submitted."></i>
-									</div>
-								</div>
-						</div>
-		
-						<div class="col-sm-6">
-							<h5>Disable user request ?</h5>
-							<div class="col-sm-6">
-								<div class="form-check form-switch">
-									<input class="form-check-input"  name="mainCompanion"  type="checkbox" role="switch" id="set-main1" checked>
-									<label class="form-check-label" for="set-main1">Disable user request ?</label>
-									<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip2"   title="When this setting is on,users are unable to submit their claim&#010;e.g System on maintenance"></i>
-								</div>
-						</div>
-					</div>
-			</div>
-	  </div>
-	  			<br>
-				<div class="panel-body">
-				<div class="form-control">	
-				
-					<h3>Cash Advance Settings</h3>
-					<br>
-					<form>
-						<div class="row mb-3">
-						  <label for="inputEmail3" class="col-sm-2 col-form-label">Maximum Paid Out(%)*</label>
-						  <div class="col-sm-4">
-							<input type="email" class="form-control" id="inputEmail3" value="75">
-						  </div>
-						</div>
-					</form>
-					
-					<br>
-					<h5>Subsistence Allowence</h5>
-					<br>
-					
-					<button type="button" class="btn btn-white mt-3 mb-3" data-bs-toggle="modal" id="myModal1" data-bs-target="#exampleModalCenter"><i class="fa fa-plus"></i> Area</button>
-						<div class="col-sm-6">
-						<table  id="tableSaveArea"  class="table table-striped table-bordered align-middle">
-							<thead>
-							  <tr>	
-								<th  data-orderable="false">Action</th>
-								{{-- <th class="text-nowrap">No</th> --}}
-								<th class="text-nowrap">Area</th>
-							  </tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-									</td>
-									{{-- <td>1</td> --}}
-									<td>Malaysia</td>
-								</tr>
-								<tr>
-									
-									<td>
-										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-									</td>
-									{{-- <td>2</td> --}}
-									<td>MIDDLE EAST</td>
-								</tr>
-								<tr>
-									
-									<td>
-										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#exampleModalCenter1" class="btn btn-outline-green" ><i class="fa fa-pencil-alt"></i></a> 
-										<a href="javascript:;" class="btn btn-outline-danger"><i class="fa fa-trash"></i></a>
-									</td>
-									{{-- <td>3</td> --}}
-									<td>SINGAPORE/BRUNEI</td>
-								</tr>
-							</tbody>
-						  </table>
-						</div>
-			</div>
-			<br>
-				<div class="row">
-				  <div class="col align-self-start">
-					<button class="btn btn-light" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
-				  </div>
-				  
-				  <div class="col d-flex justify-content-end">
-					<button class="btn btn-light" type="submit"><i class="fa fa-save"></i> Submit</button>
-				  </div>
-				</div>
-				
+					<form>  
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="boxes">
+                            <div id="address">
+                                <div id="input1" style="margin-bottom:4px;" class="input">
+                                    <label for="street">Submit Claim To Admin on Every: </span><i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="Setup the claim batch date that should be moved to Admin approver."></i></label><input name="Street[]" id="street" type="number">
+                                </div>
+                                <div id="input2" style="margin-bottom:4px;" class="input">
+                                     {{-- <label for="line2">Claim Expiration Date:</label><input id="line2" name="Line2[]" type="text"> --}}
+                                     <label for="street">Claim Expiration Date: </span><i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="User can decide the date the claim batch should be renewed"></i></label><input name="Street[]" id="street" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="col">
+                        <div class="boxes">
+                            <div id="address">
+                                <div id="input1" style="margin-bottom:4px;" class="input">
+                                    <label for="street">Submit Claim to Finance On Every : </span><i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="Setup the claim batch date that should be moved to Finance approver."></i></label><input name="Street[]" id="street" type="number">
+                                </div>
+                                <div id="input2" style="margin-bottom:4px;" class="input">
+                                    <label for="street">Final Claim Submit Date : </span><i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip1" title="User can decide on the final submit claim date."></i></label><input name="Street[]" id="street" type="number">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+          </div>
+               
+              {{-- <div class="row">
+                      <div class="col align-self-start">
+                        <button class="btn btn-light" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+                      </div>
+                      
+                      <div class="col d-flex justify-content-end">
+                        <button class="btn btn-light" type="submit"><i class="fa fa-save"></i> Submit</button>
+                      </div>
+                    </div> --}}
+                    <div class="absolute">
+                        <button type="Submit">Button</button>
+                    </div>
+                    <div class="absolute1">
+                        <button type="Submit">Button</button>
+                    </div>
+                </form>
+                
 
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">	
-		  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<form>
-				<div class="row mb-3">
-					<label for="inputEmail3" class="col-sm-2 col-form-label">Area*</label><br>
-					<div class="col-sm-6">
-					<input type="text" class="form-control" id="Area" value="USA/CANADA">
-				</form>
-		</div>
-		</div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		  <button type= "button" id="saveArea" class="btn btn-primary" data-bs-dismiss="modal"> Save changes</button>
-		</div>
-	  </div>
-	</div>
-  </div>
-</div>
-	
-  
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-	<div class="modal-dialog modal-dialog-centered" role="document">
-	  <div class="modal-content">
-		<div class="modal-header">
-		  <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
-		  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-			<span aria-hidden="true">&times;</span>
-		  </button>
-		</div>
-		<div class="modal-body">
-			<form>
-				<div class="row mb-3">
-					<label for="inputEmail3" class="col-sm-2 col-form-label">Area*</label><br>
-					<div class="col-sm-6">
-					<input type="text" class="form-control" id="" value="USA/CANADA">
-			 </form>
-		</div>
-		</div>
-		<div class="modal-footer">
-		  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-		  <button type="button" class="btn btn-primary">Save changes</button>
-		</div>
-	  </div>
-	</div>
-  </div>
-</div>
-	
+                
 
-  
-  
-
-		
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -901,62 +749,11 @@ background-color:green;
 
 
 	<script>
-		$(document).ready(function () {
-			$('#tableSaveArea')
-					.dataTable({
-						"responsive": true,
-						"bLengthChange": false,
-						"bFilter": true,
-							
-												
-						
-					});
-			$('[data-toggle="tooltip1"]').tooltip();  
-			$('[data-toggle="tooltip2"]').tooltip();   
+		
 
 
-			 
-		});
 
-		$("#saveArea").click(function() {
-
-var addtypelogactivityName = document.getElementById('Area').value;
-
-if (addtypelogactivityName == "") {
-	document.getElementById('Area');
-	return;
-} else {
-
-	let table = document.getElementById('tableSaveArea');
-	// Insert a row at the end of the table
-	let newRow = table.insertRow(-1);
-	var l = table.rows.length - 1;
-	
-	//Col 3 = Delete Button
-	table.rows[l].insertCell(0);
-	table.rows[l].cells[0].innerHTML = "<input hidden name='Area' value='" + addtypelogactivityName + "' /><button type='button' class='btn btn-outline-green' onclick='editRow(this);' id='btnDelete' size='1' height='1' ><i class='fa fa-pencil'></i></button> <button type='button' class='btn btn-outline-danger' onclick='delRow(this);' id='btnDelete' size='1' height='1' ><i class='fa fa-trash'></i></button>";
-	
-	
-	//Col 1 = addtypelogactivityName
-	table.rows[l].insertCell(1);
-	table.rows[l].cells[1].innerHTML = addtypelogactivityName;
 
 	
-
-	//Clear input
-
-
-}
-});
-
-
-	function delRow(btn) {
-    var row = btn.parentNode.parentNode;
-    row.parentNode.removeChild(row);
-	}
-
-	function editRow() {
-		$('#exampleModalCenter').modal('show');
-	}
 	</script>
 

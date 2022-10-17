@@ -216,3 +216,7 @@ Route::get('/eclaim/myclaim', function () {
 Route::get('/setting/general', function () {
     return view('settinggeneral');
 });
+
+Route::get('/setting/claimdate', function () {
+    return view('Claim-Date');
+});
