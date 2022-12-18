@@ -1,39 +1,38 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
+
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Cash Advance Approval</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
-	
-    <link rel="shortcut icon" href="../assets/img/logo/orbit-sm.png" >
+
+	<link rel="shortcut icon" href="../assets/img/logo/orbit-sm.png">
 	<!-- ================== BEGIN core-css ================== -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">	<link href="../assets/css/vendor.min.css" rel="stylesheet" />	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
+	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
 	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
 	<!-- ================== END core-css ================== -->
-	
+
 	<!-- ================== BEGIN page-css ================== -->
 	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
 	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
 	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
 	<link href="../assets/plugins/simple-calendar/dist/simple-calendar.css" rel="stylesheet" />
+	<link href="../assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+	<!-- ================== END page-css ================== -->
 
+	<!-- ================== DATATABLE ================== -->
 	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+	<link href="../assets/plugins/datatables.net-colreorder-bs5/css/colReorder.bootstrap5.min.css" rel="stylesheet" />
 
-
-
-	
-	
-	<!-- ================== END page-css ================== -->
-	<style>
-
-</style>
-		
 </head>
+
 <body>
 	<!-- BEGIN #loader -->
 	<div id="loader" class="app-loader">
@@ -47,7 +46,7 @@
 		<div id="header" class="app-header">
 			<!-- BEGIN navbar-header -->
 			<div class="navbar-header">
-			<img src="../assets/img/logo/orbit-logo-5.png" class="navbar-logo navbar-brand"  alt="...">
+				<img src="../assets/img/logo/orbit-logo-5.png" class="navbar-logo navbar-brand" alt="...">
 				<button type="button" class="navbar-mobile-toggler" data-toggle="app-sidebar-mobile">
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -57,7 +56,7 @@
 			<!-- END navbar-header -->
 			<!-- BEGIN header-nav -->
 			<div class="navbar-nav">
-				
+
 				<div class="navbar-item dropdown">
 					<a href="#" data-bs-toggle="dropdown" class="navbar-link dropdown-toggle icon">
 						<i class="fa fa-bell"></i>
@@ -120,10 +119,10 @@
 						</div>
 					</div>
 				</div>
-				
+
 				<div class="navbar-item navbar-user dropdown">
 					<a href="#" class="navbar-link dropdown-toggle d-flex align-items-center" data-bs-toggle="dropdown">
-						<img src="../assets/img/user/user-13.jpg" alt="" /> 
+						<img src="../assets/img/user/user-13.jpg" alt="" />
 						<span>
 							<span class="d-none d-md-inline">Adam Schwartz</span>
 							<b class="caret"></b>
@@ -133,7 +132,7 @@
 						<a href="javascript:;" class="dropdown-item">Edit Profile</a>
 						<a href="javascript:;" class="dropdown-item d-flex align-items-center">
 							Inbox
-							<span class="badge bg-danger rounded-pill ms-auto pb-4px">2</span> 
+							<span class="badge bg-danger rounded-pill ms-auto pb-4px">2</span>
 						</a>
 						<a href="javascript:;" class="dropdown-item">Calendar</a>
 						<a href="javascript:;" class="dropdown-item">Setting</a>
@@ -145,7 +144,7 @@
 			<!-- END header-nav -->
 		</div>
 		<!-- END #header -->
-	
+
 		<!-- BEGIN #sidebar -->
 		<div id="sidebar" class="app-sidebar bg-gradient-gray">
 			<!-- BEGIN scrollbar -->
@@ -218,7 +217,7 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="/timesheet/timesheetapproval" class="menu-link">
                                     <div class="menu-icon">
 										<i class="fa fa-receipt text-gray"></i>
 									</div>
@@ -226,7 +225,7 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="/timesheet/timesheetrealtime" class="menu-link">
                                     <div class="menu-icon">
 										<i class="fa fa-receipt text-gray"></i>
 									</div>
@@ -443,7 +442,7 @@
                                 </a>
                             <div class="menu-submenu">
                                 <div class="menu-item">
-                                    <a href="#" class="menu-link">
+                                    <a href="/timesheet/reportingstatusreport" class="menu-link">
                                         <div class="menu-icon">
 								             <i class="fa fa-address-card text-gray"></i>
 							            </div>
@@ -451,7 +450,7 @@
                                     </a>
                                     </div>
                                     <div class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="/timesheet/reportingtimesheetemployee" class="menu-link">
                                 <div class="menu-icon">
 								    <i class="fa fa-user-clock text-gray"></i>
 							    </div>
@@ -459,7 +458,7 @@
                                 </a>
                             </div>
                             <div class="menu-item">
-                                <a href="#" class="menu-link">
+                                <a href="/timesheet/timesheetovertimereport" class="menu-link">
                                 <div class="menu-icon">
 								    <i class="fa fa-user-gear text-gray"></i>
 							    </div>
@@ -596,125 +595,157 @@
 		<div class="app-sidebar-bg"></div>
 		<div class="app-sidebar-mobile-backdrop"><a href="#" data-dismiss="app-sidebar-mobile" class="stretched-link"></a></div>
 		<!-- END #sidebar -->
-		
+
 		<!-- BEGIN #content -->
 		<div id="content" class="app-content">
 			<!-- BEGIN breadcrumb -->
 			<!-- BEGIN breadcrumb -->
-	
-	<!-- END breadcrumb -->
-	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
 
-		<!-- BEGIN scroll-top-btn -->
-		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-		<!-- END scroll-top-btn -->
-	
+			<!-- END breadcrumb -->
+			<!-- BEGIN page-header -->
+			<h1 class="page-header">HRIS | Employee Information</h1>
+			<div class="row">
+				<!-- BEGIN col-6 -->
+				<div class="col-xl-3">
+					<div class="card">
+						<div class="card-body">
+							<div class="profile-pic m-3">
+								<img src="../assets/img/user/user-13.jpg" width="100px" class="rounded d-block" alt="Profile Picture" data-bs-toggle="modal" data-bs-target="#modal-dialog">
+								<h4 class="mt-3 mb-0 fw-bold">Aqil Anwar</h4>
+								<p>0108</p>
+								
+								<div class="input-group mb-2 mt-2">
+									<span class="input-group-text" id="basic-addon1"><i class="fas fa-briefcase fa-fw me-2"></i></span>
+									<input type="text" class="form-control bg-white" value="Admin" aria-label="Username" aria-describedby="basic-addon1" readonly>
+								</div>
+								<div class="input-group mb-2 mt-2">
+									<span class="input-group-text fw-light" id="basic-addon1"><i class="fas fa-address-card fa-fw me-2"></i></span>
+									<input type="text" class="form-control bg-white" value="admin@gmail.com" aria-label="Username" aria-describedby="basic-addon1" readonly>
+								</div>
+								<div class="input-group mb-2 mt-2">
+									<span class="input-group-text" id="basic-addon1"><i class="fas fa-phone-square fa-fw me-2"></i></span>
+									<input type="text" class="form-control bg-white" value="0136519887" aria-label="Username" aria-describedby="basic-addon1" readonly>
+								</div>
+								<div class="modal fade" id="modal-dialog">
+									<div class="modal-dialog">
+										<div class="modal-content">
+										<div class="modal-header">
+											<h4 class="modal-title">Update Profile Picture</h4>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-hidden="true"></button>
+										</div>
+										<div class="modal-body">
+										<div class="col-sm-6">
+												
+												<input class="form-check-input" type="checkbox" id="Gravatar" />
+  												<label class="form-check-label" for="Gravatar">Use Gravatar profile picture</label><br><br>
+												<label for="marriage-cert" class="form-label">Profile Picture</label>
+												<input type="file" id="marriage-cert" class="form-control" aria-describedby="dob">
+												</div>
+										</div>
+										<div class="modal-footer">
+											<a href="javascript:;" class="btn btn-white" data-bs-dismiss="modal">Close</a>
+											<a href="javascript:;" class="btn btn-primary">Save</a>
+										</div>
+										</div>
+									</div>
+									</div>
+								<!-- Tabs navs -->
+								<div class="align-items-start mt-3">
+									<div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+									  <button class="nav-link  text-start border border-1 mt-1 mb-1" id="v-pills-myprofile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-myprofile" type="button" role="tab" aria-controls="v-pills-myprofile" aria-selected="false">
+										<i class="fas fa-circle-user fa-fw"></i>
+										My Profile
+									</button>
+									  <button class="nav-link text-start border border-1 mt-1 mb-1" id="v-pills-employment-tab" data-bs-toggle="pill" data-bs-target="#v-pills-employment" type="button" role="tab" aria-controls="v-pills-employment" aria-selected="false">Employment Details</button>
+									  <button class="nav-link text-start border border-1 mt-1 mb-1" id="v-pills-changepassword-tab" data-bs-toggle="pill" data-bs-target="#v-pills-changepassword" type="button" role="tab" aria-controls="v-pills-changepassword" aria-selected="false">Change Password</button>
+									  <button class="nav-link text-start border border-1 mt-1 mb-1" id="v-pills-vehicledetails-tab" data-bs-toggle="pill" data-bs-target="#v-pills-vehicledetails" type="button" role="tab" aria-controls="v-pills-vehicledetails" aria-selected="false">Vehicle Details</button>
+									  <button class="nav-link text-start border border-1 mt-1 mb-1" id="v-pills-eleave-tab" data-bs-toggle="pill" data-bs-target="#v-pills-eleave" type="button" role="tab" aria-controls="v-pills-eleave" aria-selected="false">eLeave</button>
+									  <button class="nav-link  text-start border border-1 mt-1 mb-1" id="v-pills-eleave-tab" data-bs-toggle="pill" data-bs-target="#v-pills-eleave" type="button" role="tab" aria-controls="v-pills-eleave" aria-selected="true">eclaim</button>
+                                      <button class="nav-link active text-start border border-1 mt-1 mb-1" id="" data-bs-toggle="pill" data-bs-target="" type="button" role="tab" aria-controls="" aria-selected="false">Cash Advance</button>
+									</div>
+								  </div>
+								<!-- Tabs navs -->
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-xl-9">
+					<div class="tab-content" id="v-pills-tabContent">
+					<div class="tab-pane fade show active" id="v-pills-myprofile" role="tabpanel" aria-labelledby="v-pills-myprofile-tab">
+					<!-- BEGIN nav-tabs -->
+							<div class="card">
+								<div class="card-header bg-white bg-gray-100">
+									<h4 class="fw-bold">
+										Cash Advance Approval Hierarchy
+									</h4>
+								</div>
+								<div class="card-body">
+									
+									<div class="tab-content panel m-0 rounded-0 p-3">
+										<!-- BEGIN tab-pane -->
+										<div class="tab-pane fade active show" id="default-tab-1">
+                                            <div class="row">
+                                                    <form>
+                                                        <div class="form-group">
+                                                            <label for="Approver">Approver</label>
+                                                            <input type="text" class="form-control" id="" aria-describedby="" placeholder="None">                                                           
+                                                          </div>
+                                                            
+                                               
+                                            </div>
+											<p class="text-end mb-0 mt-3">
+												<a href="javascript:;" class="btn btn-primary"><i class="fa fa-save"></i>  Submit</a>
+											</p>
+										</div>
+								</div>
+							</div>
+						</div>
+				</div>
+				<!-- END tab-pane -->
+			</div>
+
+
+			<!-- END col-4 -->
+		</div>
+		<!-- END row -->
+	</div>
+	<!-- END #content -->
+
+
+	<!-- BEGIN scroll-top-btn -->
+	<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
+	<!-- END scroll-top-btn -->
+	</div>
 	<!-- END #app -->
-	
+
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="../assets/js/vendor.min.js"></script>
 	<script src="../assets/js/app.min.js"></script>
-
-
 	<!-- ================== END core-js ================== -->
 
-</body>
-</html>
-
-<script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.flash.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
-	<script src="/assets/plugins/pdfmake/build/pdfmake.min.js"></script>
-	<script src="/assets/plugins/pdfmake/build/vfs_fonts.js"></script>
-	<script src="/assets/plugins/jszip/dist/jszip.min.js"></script>
-	<script src="/assets/js/demo/table-manage-buttons.demo.js"></script>
-	<script src="/assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
-	<script src="/assets/js/demo/render.highlight.js"></script>
-	<link href="/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-	<link href="/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
-	<script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-	<link href="/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
-	<script src="/assets/plugins/moment/min/moment.min.js"></script>
-	<script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<!-- ================== BEGIN page-js ================== -->
+	<script src="../assets/plugins/d3/d3.min.js"></script>
+	<script src="../assets/plugins/nvd3/build/nv.d3.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap-world-mill.js"></script>
+	<script src="../assets/plugins/simple-calendar/dist/jquery.simple-calendar.min.js"></script>
+	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="../assets/js/demo/dashboard-v2.js"></script>
+	<link href="/assets/plugins/switchery/dist/switchery.min.css" rel="stylesheet" />
+	<script src="/assets/plugins/switchery/dist/switchery.min.js"></script>
 	<link href="/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
-	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
+	<!-- ================== DATA TABLE ================== -->
+	<script src="../assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+	<script src="../assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+	<script src="../assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+	<script src="../assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+	<script src="../assets/plugins/datatables.net-colreorder/js/dataTables.colReorder.min.js"></script>
+	<script src="../assets/plugins/datatables.net-colreorder-bs5/js/colReorder.bootstrap5.min.js"></script>
+
 	
+	  
+	<!-- ================== END page-js ================== -->
+</body>
 
-
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
-
+</html>

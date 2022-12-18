@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting Claim Category </title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -24,15 +24,18 @@
 	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
-
-
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
 
-</style>
-		
+
+
+
+
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,62 +607,95 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
+	<h1 class="page-header">Setting | Claim Category</h1>
+			<div class="panel-body" style="relative">
 				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+                    <h3>Claim Category List</h3>
+                    <button type="button" class="btn btn-white mt-3 mb-3" name="" id=""><i class="fa fa-plus"></i> Claim Category</button>
+                    <table  id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+                        <thead>
+                          <tr>	
+                            <th  data-orderable="false">Action</th>
+                            <th class="text-nowrap">Status</th>
+							<th class="text-nowrap">Claim Category<BR> Code</th>
+							<th class="text-nowrap">Claim<BR> Category</th>
+							<th class="text-nowrap">Claim Type</th>
+							<th class="text-nowrap">Description</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+									<button class="btn btn-outline-green" ><i class="fa fa-edit"></i></button> 
+                                    <button class="btn btn-outline-red" ><i class="fa fa-trash"></i></button> 
+                                </td>
+								<td>
+									<div class="form-check form-switch">
+										<input class="form-check-input"   name=""  type="checkbox" role="switch" id=""  checked>
+									</div>
+								</td>
+                                <td>C01</td>
+								<td>Phone Bill</td>
+								<td>
+									<div class="col">
+										
+										<span class="badge bg-primary">GC</span>
+										<span class="badge bg-warning">MTC</span>
+									</div>
+								</td>
+								<td>Phone bill</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>
+									<button class="btn btn-outline-green" ><i class="fa fa-edit"></i></button> 
+                                    <button class="btn btn-outline-red" ><i class="fa fa-trash"></i></button>  
+                                    
+                                </td>
+								<td>
+									<div class="form-check form-switch">
+										<input class="form-check-input"   name=""  type="checkbox" role="switch" id=""  checked>
+									</div>
+								</td>
+                                <td>C02</td>
+								<td>Entertainment</td>
+								<td>
+									<div class="col">
+										<span class="badge bg-primary">GC</span>
+										<span class="badge bg-warning">MTC</span>
+									</div>
+								</td>
+								<td>Entertainment</td>
+                            </tr>
+                            <tr>
+                                
+                                <td>
+									<button class="btn btn-outline-green" ><i class="fa fa-edit"></i></button> 
+                                    <button class="btn btn-outline-red" ><i class="fa fa-trash"></i></button>  
+                                </td>
+								<td>
+									<div class="form-check form-switch">
+										<input class="form-check-input"   name=""  type="checkbox" role="switch" id=""  checked>
+									</div>
+								</td>
+                                <td>C03</td>
+								<td>Others</td>
+								<td>
+									<div class="col">
+										<span class="badge bg-warning">MTC</span>
+									</div>
+								</td>
+								<td>Buy Spare Part / etc</td>
+                            </tr>	
+                        </tbody>
+                      </table>
+					 
+					  </div>
+					  <br>
+					  <div class="row">
+						<div class="col align-self-start">
+						  <button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+						</div>
 
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -710,11 +746,17 @@
 
 
 	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
+		$(document).ready(function () {
+			$('#tableSaveArea')
+					.dataTable({
+					"responsive": true,
+						"bLengthChange": false,
+						"bFilter": true,
+                    });
+                    
+			$('[data-toggle="tooltip1"]').tooltip();  
+			$('[data-toggle="tooltip2"]').tooltip();   
+			 
+		});
 	</script>
 

@@ -213,6 +213,8 @@ Route::get('/timesheet/timesheetemployeereportall', function () {
 Route::get('/eclaim/myclaim', function () {
     return view('eclaimmyclaim');
 });
+
+//eclaim
 Route::get('/setting/general', function () {
     return view('settinggeneral');
 });
@@ -220,3 +222,98 @@ Route::get('/setting/general', function () {
 Route::get('/setting/claimdate', function () {
     return view('Claim-Date');
 });
+
+Route::get('/setting/claimcategory', function () {
+    return view('Claim-Category');
+});
+
+Route::get('/setting/addclaimcategory', function () {
+    return view('add-claim');
+});
+
+Route::get('/setting/updateclaimcategory', function () {
+    return view('update-claim');
+});
+
+Route::get('/setting/entitlementgroup', function () {
+    return view('settingEntitlement');
+});
+
+Route::get('/setting/addentitlementgroup', function () {
+    return view('AddEntitlementGroup');
+});
+
+Route::get('/setting/updateentitlementgroup', function () {
+    return view('UpdateEntitlementGroup');
+});
+
+Route::get('/setting/cashadvancedcontroller', function () {
+    return view('cashAdvancedController');
+});
+
+Route::get('/setting/settingeclaimapproval', function () {
+    return view('settingeclaimapproval');
+});
+
+Route::get('/setting/settingcashadvanceapproval', function () {
+    return view('settingcashadvanceapproval');
+});
+
+Route::get('/setting/claimforthemonth', function () {
+    return view('claimforthemonth');
+});
+
+
+//end eclaim
+
+Route::get('/setting/settingtesting', function () {
+    return view('settingtesting');
+});
+
+
+Route::get('/setting/settingtesting2', function () {
+    return view('settingtesting2');
+});
+
+
+Route::get('/setting/settinggeneralcopy', function () {
+    return view('settinggeneralcopy');
+});
+
+Route::get('/orgcharttest', function () {
+    return view('orgcharttest');
+});
+
+//claimapproval
+
+Route::get('/claimapproval/claimapproval', function () {
+    return view('claimapproval/eclaimapproval');
+});
+
+Route::get('/claimapproval/challengeroute', function () {
+    return view('claimapproval/challengeroute');
+});
+
+
+//leave
+
+// Route::get('/eleave/setting/entitlement', function () {
+//     return view('Eleave/Setting/update-claim');
+// });
+
+Route::get('/eleave/entitlement', function () {
+    return view('Eleave/Setting/eleaveentitlement');
+});
+
+Route::get('/eleave/leavetypes', function () {
+    return view('Eleave/Setting/leavetypes');
+});
+
+Route::get('/eleave/holidaylist', function () {
+    return view('Eleave/Setting/holidaylist');
+});
+
+
+
+
+// eleaveentitlement.blade

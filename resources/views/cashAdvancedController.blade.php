@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Cash Advanced Controller</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,19 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-
-</style>
-		
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -466,8 +471,7 @@
                                     <div class="menu-text text-gray">Overtime Report</div>
                                 </a>
                             </div>
-                                </div>
-                                
+                                </div>      
                             </div>
                             <div class="menu-item has-sub">
                                 <a href="#" class="menu-link">
@@ -493,10 +497,7 @@
                                     <div class="menu-text text-gray">Status Report</div>
                                 </a>
                             </div>
-                            
                         </div>
-                                
-                                
                             </div>
                             <div class="menu-item">
 								<a href="#" class="menu-link">
@@ -604,63 +605,69 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
+	<h1 class="page-header">Settings| Cash Advance Controller</h1>
 			<div class="panel-body">
 				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
-
+                    <h3>Claim Controller List</h3>
+                    <br>
+                   {{-- <div class="table-responsive"> --}}
+                    <table id="tablecashadvance"  class="table table-striped table-bordered align-middle">
+                        <thead>
+                          <tr>	
+                            <th class="text-nowrap">Action</th>
+							<th class="text-nowrap">Status</th>
+							<th class="text-nowrap">Employee Name</th>
+							<th class="text-nowrap">Department</th>
+							<th class="text-nowrap">Cash Advanced <BR> Month</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id="set-main"  checked>
+                                        {{-- <label class="form-check-label" for="set-main">Send notification email</label>  --}}
+                                    </div>
+                                </td>
+                                <td>Active</td>
+                                <td>Hafiz Bin Rahman</td>
+                                <td>Service Delivery Department</td>
+                                <td>January</td>       
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id="set-main"  checked>
+                                        {{-- <label class="form-check-label" for="set-main">Send notification email</label>  --}}
+                                    </div>
+                                </td>
+                                <td>Deactivate</td>
+                                <td>Ahmad bin Abu</td>
+                                <td>Sale Department</td>
+                                <td>March</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id="set-main"  checked>
+                                        {{-- <label class="form-check-label" for="set-main">Send notification email</label>  --}}
+                                    </div>
+                                </td>
+                                <td>Active</td>
+                                <td>Zarina bin Hassan</td>
+                                <td>Human Resource Department</td>
+                                <td>September</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+                <br>
+				<div class="row">
+                    <div class="col align-self-start">
+                      <button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+                    </div>
+		
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -708,13 +715,16 @@
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
 	
 
+<script>
+$(document).ready(function () {
+    $('#tablecashadvance')
+            .dataTable({
+                "responsive": true,
+                "bLengthChange": false,
+                "bFilter": true,
+                
+            });
+    
+});
 
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
-
+</script>

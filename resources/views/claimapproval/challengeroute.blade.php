@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting General</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,20 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-
-</style>
-		
+	
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,62 +610,182 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
+	    <h1 class="page-header">Setting | General</h1>
+	    <div class="panel-body">
+            <div class="form-control">
+					<h3>*Please click on "Check route" button to enable "Choose Route " button</h3><br>
+					<div class="row p-2">
+						<div class="col-md-5 align-self-start">
+							<div class="row p-2">
+								<div class="form-control">
+									<div class="row p-2">
+										<div class="col align-self-start">
+										  <h4>Destination A</h4>
+										</div>
+										
+										<div class="col d-flex justify-content-end">
+										  <button class="btn btn-primary btn-sm" id="btnroutea" type="button" disabled> Choose Route A</button>
+										</div>
+									</div>
+									  <br>
+								   <div class="row p-2">
+										<div class="col-sm-4">
+											   <h5> Start address </h5>
+										</div>
+										<div class="col">
+											<h5> : Kastam Presint 8, Putrajaya</h5>
+										</div>
+								   </div>
+		
+								   <div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Exact Start Coordinate </h5>
+										</div>
+										<div class="col">
+											<h5> : 3.147523,101734331</h5>
+										</div>
+								   </div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> End Address </h5>
+										</div>
+										<div class="col">
+											<h5> : Edaran IT Services, WPKL</h5>
+										</div>
+									</div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Exact End Coordinate </h5>
+										</div>
+										<div class="col">
+											<h5> : 3.147523,101734331</h5>
+										</div>
+									</div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Activity </h5>
+										</div>
+										<div class="col">
+											<h5> : Office <i class="fa fa-arrow-right" aria-hidden="true"></i> My project</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-md-2 align-self-center"></div>
+						<div class="col-md-5 align-self-end">
+							<div class="row p-2">
+								<div class="form-control">
+									<div class="row p-2">
+										<div class="col align-self-start">
+										  <h4>Destination B</h4>
+										</div>
+										
+										<div class="col d-flex justify-content-end">
+										  <button class="btn btn-primary btn-sm" id="bntrouteb" type="button" disabled> Choose Route B</button>
+										</div>
+									</div>
+									  <br>
+								   <div class="row p-2">
+										<div class="col-sm-4">
+											   <h5> Start address </h5>
+										</div>
+										<div class="col">
+											<h5> : Jalan Mersing, Putrajaya</h5>
+										</div>
+								   </div>
+		
+								   <div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Exact Start Coordinate </h5>
+										</div>
+										<div class="col">
+											<h5> : 3.13232523,101734331</h5>
+										</div>
+								   </div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> End Address </h5>
+										</div>
+										<div class="col">
+											<h5> : Edaran IT Services, WPKL</h5>
+										</div>
+									</div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Exact End Coordinate </h5>
+										</div>
+										<div class="col">
+											<h5> : 3.1475223,101734331</h5>
+										</div>
+									</div>
+		
+									<div class="row p-2">
+										<div class="col-sm-4">
+											<h5> Activity </h5>
+										</div>
+										<div class="col">
+											<h5> : Home <i class="fa fa-arrow-right" aria-hidden="true"></i> My project</h5>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row p-2">
+						<div class="col d-flex justify-content-start">
+							<div class="row p-2">
+								<div class="col">
+									<h4>Mileage:</h4>
+								</div>
+								<div class="col">
+									<h4>35KM</h4>
+								</div>
+							</div>
+						</div>
+						<div class="col d-flex justify-content-center">
+							<button class="btn btn-primary" id="btncheckroute">Check Route</button>
+						</div>
+						<div class="col d-flex justify-content-end">
+							<div class="row p-2">
+								<div class="col">
+									<h4>Mileage:</h4>
+								</div>
+								<div class="col">
+									<h4>42KM</h4>
+								</div>
+							</div>
+						</div>
+					</div>
 					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+					<div class="row p-2">
+						<div class="col-md-5 align-self-start">
+							<div class="row p-2">
+								<h3>Route A</h3>
+								<div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=edaran%20berhad&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:500px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:500px;}</style></div></div>
+							</div>
+							
+						</div>
+	
+						<div class="col-md-2 align-self-center">
+	
+						</div>
+	
+	
+						<div class="col-md-5 align-self-end">
+							<h3>Route B</h3>
+							<div class="mapouter"><div class="gmap_canvas"><iframe width="500" height="300" id="gmap_canvas" src="https://maps.google.com/maps?q=edaran%20berhad&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://putlocker-is.org"></a><br><style>.mapouter{position:relative;text-align:right;height:300px;width:500px;}</style><a href="https://www.embedgooglemap.net"></a><style>.gmap_canvas {overflow:hidden;background:none!important;height:300px;width:500px;}</style></div></div>
+						</div>
+					</div>
+					<br>
+            </div>   
+      </div>
+
 
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -673,6 +799,7 @@
 
 
 	<!-- ================== END core-js ================== -->
+
 
 </body>
 </html>
@@ -706,15 +833,24 @@
 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
-	
 
 
 	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
+		$(document).ready(function () {
+			// $("#btncheckroute").click(function(){
+			// $("#btnroutea").prop('disabled', false);
+			// $("#bntrouteb").prop('disabled', false);
+			// });
+
+			$("#btncheckroute").click(function(event) {
+				//$(".clickable-row").not(this).removeClass('selected');
+				$(this).toggleClass('selected');
+				$("#btnroutea").prop("disabled", !$(this).hasClass('selected'));
+				$("#bntrouteb").prop("disabled", !$(this).hasClass('selected'));
+			});
+
     });
 	</script>
+
+	
 

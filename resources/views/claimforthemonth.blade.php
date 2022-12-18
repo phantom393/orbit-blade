@@ -1,39 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en" >
+	
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Timesheet </title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
 	
     <link rel="shortcut icon" href="../assets/img/logo/orbit-sm.png" >
 	<!-- ================== BEGIN core-css ================== -->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">	<link href="../assets/css/vendor.min.css" rel="stylesheet" />	<link href="../assets/css/vendor.min.css" rel="stylesheet" />
-	<link href="../assets/css/default/app.min.css" rel="stylesheet" />
-	<!-- ================== END core-css ================== -->
-	
-	<!-- ================== BEGIN page-css ================== -->
-	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet" />
-	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet" />
-	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet" />
-	<link href="../assets/plugins/simple-calendar/dist/simple-calendar.css" rel="stylesheet" />
-
-	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
-	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
-
-
-
-	
-	
-	<!-- ================== END page-css ================== -->
-	<style>
-
-</style>
-		
+	<link href="https://fonts.googleapis.com" rel="preconnect"/>
+	<link href="https://fonts.gstatic.com" crossorigin rel="preconnect"/>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet"/>
+    <link href="../assets/css/vendor.min.css" rel="stylesheet"/>
+	<link href="../assets/css/default/app.min.css" rel="stylesheet"/>
+    <link href="../assets/plugins/select2/dist/css/select2.min.css" rel="stylesheet"/>
+    <link href="../assets/plugins/select-picker/dist/picker.min.css" rel="stylesheet"/>
+    <link href="../assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet"/>
+	<link href="../assets/plugins/jvectormap-next/jquery-jvectormap.css" rel="stylesheet"/>
+	<link href="../assets/plugins/gritter/css/jquery.gritter.css" rel="stylesheet"/>
+	<link href="../assets/plugins/nvd3/build/nv.d3.css" rel="stylesheet"/>
+	<link href="../assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet"/>
+    <link href="../assets/plugins/simple-calendar/dist/simple-calendar.css" rel="stylesheet"/>
+    <link href="../assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet"/>
+    <link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet"/>
+    <link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet"/>
+    <!-- ================== END core-css ================== -->
 </head>
+
 <body>
 	<!-- BEGIN #loader -->
 	<div id="loader" class="app-loader">
@@ -604,86 +600,255 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
-
-		<!-- BEGIN scroll-top-btn -->
-		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-		<!-- END scroll-top-btn -->
+	<h1 class="page-header">Claim <small>| Claim for the Month </small></h1>
 	
+	<!-- END page-header -->
+	<!-- BEGIN panel -->
+	<div class="panel panel">
+		
+		<!-- BEGIN panel-heading -->
+		
+		<div class="panel-heading">
+		<div class="col-md-6">
+        <h4> Claim Report For The Month </h4>
+		
+		<br><a href="javascript:;" data-bs-toggle="modal" data-bs-target="#newcftm" class="btn btn-primary">+ Add Claim</a></br>
+		</div>
+		
+			<h4 class="panel-title"></h4>
+			
+			
+		</div>
+		<!-- END panel-heading -->
 	<!-- END #app -->
+    <div class="panel-body">
+        <table id="tableformonth" class="table table-striped table-bordered align-middle">
+        <thead>
+            <tr>
+            <th width="1%">No</th>
+                <th>Year</th>
+                <th>Month</th>
+                <th>Status</th>
+                <th>Feature</th>
+                <th>Added By</th>
+                <th>Added Time</th>
+                <th>Modified By</th>
+                <th>Modified Time</th>
+                <th width="9%" data-orderable="false" class="align-middle">Action</th>
+            </tr>
+        </thead>
+            <tbody>
+                <tr class="even gradeC">
+				<td width="1%" class="fw-bold text-dark">1</td>
+                <td>2022</td>
+                <td>June</td>
+                <td>hello</td>
+                <td>P01</td>
+                <td>AFIQAH</td>
+                <td>SDD</td>
+                <td>PV012254</td>
+                <td>12345</td>
+                <td><a href="javascript:;" data-bs-toggle="modal" data-bs-target="#updatecftm" class="btn btn-outline-green">
+                    <i class="fa fa-pencil-alt"></i>
+                </a>
+                    <a href="javascript:;" class="btn btn-outline-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+               </tr>
+               <tr class="even gradeC">
+				<td width="1%" class="fw-bold text-dark">2</td>
+                <td>2024</td>
+                <td>July</td>
+                <td>hello</td>
+                <td>P01</td>
+                <td>AFIQAH</td>
+                <td>SDD</td>
+                <td>PV012254</td>
+                <td>12345</td>
+                <td><a href="javascript:;" data-bs-toggle="modal" data-bs-target="#updatecftm" class="btn btn-outline-green">
+                    <i class="fa fa-pencil-alt"></i>
+                </a>
+                    <a href="javascript:;" class="btn btn-outline-danger">
+                        <i class="fa fa-trash"></i>
+                    </a>
+                </td>
+               </tr>
+               </tbody>
+               </table>
+			
+		</div>
+	</div>
 	
+
+    <div class="modal fade" id="newcftm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">New Claim for the Month</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+
+					<div class="modal-body">
+					  <form>
+                      <div class="mb-3">
+						  <label>Year</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Year" selected= "selected">Please Choose</option>
+                                <option value="1" label= "2022"></option>
+                                <option value="2" label= "2023"></option>
+                                <option value="3" label= "2024"></option>
+                                <option value="4" label= "2025"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Month</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Month" selected= "selected">Please Choose</option>
+                                <option value="1" label= "January"></option>
+                                <option value="2" label= "February"></option>
+                                <option value="3" label= "March"></option>
+                                <option value="4" label= "April"></option>
+                                <option value="5" label= "May"></option>
+                                <option value="6" label= "June"></option>
+                                <option value="7" label= "July"></option>
+                                <option value="8" label= "August"></option>
+                                <option value="9" label= "September"></option>
+                                <option value="10" label= "October"></option>
+                                <option value="11" label= "November"></option>
+                                <option value="12" label= "December"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Status</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Status" selected= "selected">Please Choose</option>
+                                <option value="1" label= "Expired"></option>
+                                <option value="2" label= "Open"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Feature</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Feature" selected= "selected">Please Choose</option>
+                                <option value="1" label= "Apply"></option>
+                                <option value="2" label= "Appeal"></option>
+                            </select>
+						</div>
+					  </form>
+					</div>
+
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Save</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+
+
+	<div class="modal fade" id="updatecftm" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+				<div class="modal-dialog">
+				  <div class="modal-content">
+					<div class="modal-header">
+					  <h5 class="modal-title" id="exampleModalLabel">Update Claim for the Month</h5>
+					  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">
+                    <form>
+                      <div class="mb-3">
+						  <label>Year</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Year" selected= "selected">Please Choose</option>
+                                <option value="1" label= "2022"></option>
+                                <option value="2" label= "2023"></option>
+                                <option value="3" label= "2024"></option>
+                                <option value="4" label= "2025"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Month</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Month" selected= "selected">Please Choose</option>
+                                <option value="1" label= "January"></option>
+                                <option value="2" label= "February"></option>
+                                <option value="3" label= "March"></option>
+                                <option value="4" label= "April"></option>
+                                <option value="5" label= "May"></option>
+                                <option value="6" label= "June"></option>
+                                <option value="7" label= "July"></option>
+                                <option value="8" label= "August"></option>
+                                <option value="9" label= "September"></option>
+                                <option value="10" label= "October"></option>
+                                <option value="11" label= "November"></option>
+                                <option value="12" label= "December"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Status</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Status" selected= "selected">Please Choose</option>
+                                <option value="1" label= "Expired"></option>
+                                <option value="2" label= "Open"></option>
+                            </select>
+						</div>
+
+						<div class="mb-3">
+						  <label>Feature</label><br>
+                            <select class='form-select'>
+                                <option value="0" label="Select Feature" selected= "selected">Please Choose</option>
+                                <option value="1" label= "Apply"></option>
+                                <option value="2" label= "Appeal"></option>
+                            </select>
+						</div>
+					  </form>
+					</div>
+
+					<div class="modal-footer">
+					  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+					  <button type="button" class="btn btn-primary">Update</button>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
 	<!-- ================== BEGIN core-js ================== -->
 	<script src="../assets/js/vendor.min.js"></script>
 	<script src="../assets/js/app.min.js"></script>
+	<script src="../assets/plugins/d3/d3.min.js"></script>
+	<script src="../assets/plugins/nvd3/build/nv.d3.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap.min.js"></script>
+	<script src="../assets/plugins/jvectormap-next/jquery-jvectormap-world-mill.js"></script>
+	<script src="../assets/plugins/simple-calendar/dist/jquery.simple-calendar.min.js"></script>
+	<script src="../assets/plugins/gritter/js/jquery.gritter.js"></script>
+	<script src="../assets/js/demo/dashboard-v2.js"></script>
+    <script src="../assets/plugins/moment/min/moment.min.js"></script>
+    <script src="../assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+    <script src="../assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="../assets/plugins/select2/dist/js/select2.min.js"></script>
+    <script src="../assets/plugins/select-picker/dist/picker.min.js"></script>
+    <script src="../assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="../assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+    <script src="../assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="../assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons/js/buttons.flash.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
+    <script src="../assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
+    <script src="../assets/plugins/pdfmake/build/pdfmake.min.js"></script>
+    <script src="../assets/plugins/pdfmake/build/vfs_fonts.js"></script>
+    <script src="../assets/plugins/jszip/dist/jszip.min.js"></script>
 
-
-	<!-- ================== END core-js ================== -->
-
-</body>
-</html>
-
-<script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
+    <script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
 	<script src="/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script>
 	<script src="/assets/plugins/datatables.net-buttons/js/buttons.flash.min.js"></script>
 	<script src="/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
 	<script src="/assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
@@ -706,15 +871,40 @@
 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
-	
 
+	<!-- required files -->
+<link href="../assets/plugins/datatables.net-fixedcolumns-bs5/css/fixedColumns.bootstrap5.min.css" rel="stylesheet" />
+<script src="../assets/plugins/datatables.net-fixedcolumns/js/dataTables.fixedColumns.min.js"></script>
+<script src="../assets/plugins/datatables.net-fixedcolumns-bs5/js/fixedColumns.bootstrap5.min.js"></script>
+<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
+<link href="../assets/plugins/datatables.net-buttons-bs5/css/buttons.bootstrap5.min.css" rel="stylesheet" />
+    
+	<!-- ================== END core-js ================== -->
+</body>
+</html>
+	<!-- required files -->
+<!-- <script>
+  $('#tableformonth').DataTable({
+    responsive: true,
+    dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+    buttons: [
+      { extend: 'copy', className: 'btn-sm' },
+      { extend: 'csv', className: 'btn-sm' },
+      { extend: 'excel', className: 'btn-sm' },
+      { extend: 'pdf', className: 'btn-sm' },
+      { extend: 'print', className: 'btn-sm' }
+    ],
+  });
+</script> -->
 
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
-
+<script>
+  $('#tableformonth').DataTable({
+    // responsive: true,
+    // scrollY: true,
+    // scrollX: true,
+    // dom: '<"row"<"col-sm-5"B><"col-sm-7"fr>>t<"row"<"col-sm-5"i><"col-sm-7"p>>',
+	paging: true,
+    // bFilter: true,
+  });
+</script>

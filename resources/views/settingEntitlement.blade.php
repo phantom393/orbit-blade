@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting Entitlement</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,21 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-
-</style>
 		
+
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -466,8 +473,7 @@
                                     <div class="menu-text text-gray">Overtime Report</div>
                                 </a>
                             </div>
-                                </div>
-                                
+                                </div>      
                             </div>
                             <div class="menu-item has-sub">
                                 <a href="#" class="menu-link">
@@ -493,10 +499,7 @@
                                     <div class="menu-text text-gray">Status Report</div>
                                 </a>
                             </div>
-                            
                         </div>
-                                
-                                
                             </div>
                             <div class="menu-item">
 								<a href="#" class="menu-link">
@@ -604,63 +607,208 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
+	<h1 class="page-header">Settings| Entitlement Group</h1>
 			<div class="panel-body">
 				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+                    <h3>Entitlement Group List</h3>
+                    <button type="button" class="btn btn-white mt-3 mb-3" name="" id=""><i class="fa fa-plus"></i> Entitlement Group</button>
+                   {{-- <div class="table-responsive"> --}}
+                    <table id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+                        <thead>
+                          <tr>	
+                            <th  data-orderable="false">Action</th>
+                            <th class="text-nowrap">Status</th>
+							<th class="text-nowrap">Claim <BR> benefit</th>
+							<th class="text-nowrap">Subsistence <BR> Allowence</th>
+							<th class="text-nowrap">Entitlement <BR> Group Name</th>
+							<th class="text-nowrap">Local <BR> Travelling</th>
+                            <th class="text-nowrap">Overseas <BR> Travelling</th>
+                            <th class="text-nowrap">Lodging <BR> Allowance</th>
+                                <th class="text-nowrap">Local Hotel</th>
+                            <th class="text-nowrap">Car<BR>  Mileage</th>
+                            <th class="text-nowrap">Mcycle<BR> Mileage</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Update</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Delete</a>
+                                        </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="" id=""  checked>
+                                    </div>
+                                </td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#claimbenefit">view</button></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#subsistenceallowance">view</button></i></td>
+                                <td>Chairman</td>
+                                <td>F</td>
+                                <td>F</td>
+                                <td>None</td>
+                                <td>Actual</td>
+                               <td>0.7</td>
+                               <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Update</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Delete</a>
+                                        </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="" id=""  >
+                                    </div>
+                                </td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#claimbenefit">view</button></i></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#subsistenceallowance">view</button></td>
+                                <td>CEO</td>
+                                <td>C</td>
+                                <td>C</td>
+                                <td>None</td>
+                                <td>350</td>
+                               <td>0.7</td>
+                               <td>0.4</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Update</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item">Delete</a>
+                                        </div>
+                                </td>
+                                <td>
+                                    <div class="form-check form-switch">
+                                        <input class="form-check-input"   name="mainCompanion"  type="checkbox" role="" id=""  checked>
+                                    </div>
+                                </td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#claimbenefit">view</button></i></td>
+                                <td><button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#subsistenceallowance">view</button></i></td>
+                                <td>Executive/ Officer</td>
+                                <td>Y</td>
+                                <td>Y</td>
+                                <td>80</td>
+                                <td>150</td>
+                               <td>0.7</td>
+                               <td>0.4</td>
+                            </tr>
+                        </tbody>
+                      </table>
 
+  <!-- Modal  claim benefit-->
+  <div class="modal fade" id="claimbenefit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Claim Benefit</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table  id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+                <thead>
+                  <tr>	
+                    <th class="text-nowrap">No</th>
+                    <th class="text-nowrap">Area</th>
+                    <th class="text-nowrap">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>MALAYSIA</td>
+                        <td>60</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>MIDDLE EAST</td>
+                        <td>170</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>SINGAPORE/BRUNEI</td>
+                        <td>80</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  {{-- modal subsistence --}}
+  <div class="modal fade" id="subsistenceallowance" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Subsistence Allowance</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <table  id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+                <thead>
+                  <tr>	
+                    <th class="text-nowrap">No</th>
+                    <th class="text-nowrap">Area</th>
+                    <th class="text-nowrap">Value</th>
+                  </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>MALAYSIA</td>
+                        <td>60</td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>MIDDLE EAST</td>
+                        <td>170</td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>SINGAPORE/BRUNEI</td>
+                        <td>80</td>
+                    </tr>
+                </tbody>
+              </table>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+                   {{-- </div> --}}
+				</div>
+            </div>
+            <br>
+				<div class="row">
+				  <div class="col align-self-start">
+					<button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+				  </div>
+				  
+		
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -710,11 +858,18 @@
 
 
 	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
+		$(document).ready(function () {
+			$('#tableSaveArea')
+					.dataTable({
+					"responsive": true,
+					"pageLength": 50,
+					"bPaginate": true,
+                    });
+                    
+                    
+			$('[data-toggle="tooltip1"]').tooltip();  
+			$('[data-toggle="tooltip2"]').tooltip();   
+			 
+		});
 	</script>
 

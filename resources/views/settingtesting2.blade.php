@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting General</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -24,15 +24,14 @@
 	<link href="../assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.css">
+
+
 
 
 	
 	
 	<!-- ================== END page-css ================== -->
-	<style>
-
-</style>
-		
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,67 +603,75 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+	    <h1 class="page-header">Setting | General</h1>
+		<div class="panel panel">
+			<div class="panel body">
+				<div><label>Start date</label></div><div><input id="startdate" value="08/24/2014"/></div>
+<div><label>Start time</label></div><div><input id="starttime" value="11:00"/></div>
+<div><label>End date</label></div><div><input id="enddate" value="08/26/2014"/></div>
+<div><label>End time</label></div><div><input id="endtime" value="11:0"/></div>
+<div><b><label>RESULT</label></b></div><div><input id="result"/></div>
+<div class="row p-2">
+	<input type="text" class="form-label" id="timepicker">
+</div>
+<div class="row p-2">
+	<input type="text" class="form-label" id="pindah">
+</div>
 
-		<!-- BEGIN scroll-top-btn -->
-		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
-		<!-- END scroll-top-btn -->
-	
+<p>
+    <label>Check in:</label>
+    <input name="din" type="text" id="din">
+</p>
+<p>
+    <label>Check out:</label>
+    <input name="dout" type="text" id="dout">
+</p>
+<p>
+    <label>Time in:</label>
+    <select id="tin" name="tin">
+        <option value="01:00 pm">13:00</option>
+        <option value="07:00 pm">19:00</option>
+    </select>
+</p>
+<p>
+    <label>Time out:</label>
+    <select id="tout" name="tout">
+        <option value="02:00 pm">12:00</option>
+        <option value="06:00 pm">18:00</option>
+    </select>
+</p>
+<p>
+    <label>Difference:</label>
+    <input name="diff" type="text" id="diff1">
+</p>
+			</div>
+		</div>
+
+        <div class="panel body">
+            <div class="row p-2">
+                <input type="text" id="date1">
+            </div>
+
+            <div class="row p-2">
+                <input type="text" id="date2">
+            </div>
+
+            <div class="row p-2">
+                <input type="text" id="time1">
+            </div>
+
+            <div class="row p-2">
+                <input type="text" id="time2">
+            </div>
+
+            <div class="row p-2">
+                <input type="text" id="result1">
+            </div>
+        </div>
+
+
+		
+
 	<!-- END #app -->
 	
 	<!-- ================== BEGIN core-js ================== -->
@@ -674,24 +681,25 @@
 
 	<!-- ================== END core-js ================== -->
 
+	{{-- <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script> --}}
 </body>
 </html>
 
-<script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-	<script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
-	<script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.flash.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
-	<script src="/assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script>
+<script src="/assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
+ <script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+	 <script src="/assets/plugins/datatables.net-buttons/js/buttons.colVis.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-buttons/js/buttons.flash.min.js"></script> 
+	 <script src="/assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script>
+	<script src="/assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script> 
 	<script src="/assets/plugins/pdfmake/build/pdfmake.min.js"></script>
 	<script src="/assets/plugins/pdfmake/build/vfs_fonts.js"></script>
 	<script src="/assets/plugins/jszip/dist/jszip.min.js"></script>
-	<script src="/assets/js/demo/table-manage-buttons.demo.js"></script>
-	<script src="/assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
+	<script src="/assets/js/demo/table-manage-buttons.demo.js"></script> 
+	 <script src="/assets/plugins/@highlightjs/cdn-assets/highlight.min.js"></script>
 	<script src="/assets/js/demo/render.highlight.js"></script>
 	<link href="/assets/plugins/datatables.net-bs5/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 	<link href="/assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
@@ -699,22 +707,69 @@
 	<script src="/assets/plugins/datatables.net-bs5/js/dataTables.bootstrap5.min.js"></script>
 	<script src="/assets/plugins/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
 	<script src="/assets/plugins/datatables.net-responsive-bs5/js/responsive.bootstrap5.min.js"></script>
+
+	{{-- kena ade  daterange--}}
 	<link href="/assets/plugins/bootstrap-daterangepicker/daterangepicker.css" rel="stylesheet" />
 	<script src="/assets/plugins/moment/min/moment.min.js"></script>
-	<script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script>
+	<script src="/assets/plugins/bootstrap-daterangepicker/daterangepicker.js"></script> 
+ 
 	<link href="/assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
-	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
-	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
-	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
+ 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script> 
+	 <link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" /> 
+	 <script src="/assets/plugins/jstree/dist/jstree.min.js"></script> 
 	
+	  <script src="//cdnjs.cloudflare.com/ajax/libs/timepicker/1.3.5/jquery.timepicker.min.js"></script>
 
 
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
+
+<script>
+	       
+
+</script>
+
+<script>
+	$(function () {
+     $("#date1, #date2").datepicker({
+         minDate: 0,
+         dateFormat: 'dd/mm/yy'
+     });
+     $('#time1,#time2').timepicker({
+        timeFormat: 'HH:mm',
+     });
+ });
+
+ $(document).ready(function () {
+     $("#result1").focus(function () {
+
+    var startdt = new Date($("#date1").val() + " " + $("#time1").val());
+    
+    var enddt = new Date($("#date2").val() + " " + $("#time2").val());
+
+    var diff = enddt - startdt;
+    
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    diff -=  days * (1000 * 60 * 60 * 24);
+    
+    var hours = Math.floor(diff / (1000 * 60 * 60));
+    diff -= hours * (1000 * 60 * 60);
+    
+    var mins = Math.floor(diff / (1000 * 60));
+    diff -= mins * (1000 * 60);
+    
+    // var seconds = Math.floor(diff / (1000));
+    // diff -= seconds * (1000);
+    
+    // $("#result").val(days + " days : " + hours + " hours : " + mins + " minutes : " + seconds + " seconds");
+    
+    $("#result1").val(days + " days : " + hours + " hours : " + mins + " minutes ");
+    
+
+     });
+ });
+</script>
+
+
+
+
+	
 

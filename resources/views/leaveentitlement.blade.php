@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>eclaim | eclaim approval</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,20 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-
-</style>
-		
+	
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,62 +610,373 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
+	    <h1 class="page-header">eClaim | Claim Approval</h1>
+	    <div class="panel-body">
+            <div class="form-control">
+                <h3>Claim Overview</h3>
+                <div class="row p-2">	
+                    <div class="col-sm-3">
+                        <h3 class="text-center">Total <br> Claims:</h3>
+                        <h3 class="text-center text-primary ">2</h3>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                    
+                    <h3 class="text-center">Total <br> Pending  Claims:</h3>
+                    <h3 class="text-center text-primary">3</h3>
+                    </div>
+        
+                    <div class="col-sm-3">
+                        
+                    <h3 class="text-center">Total <br> Rejected Claims</h3>
+                    <h3 class="text-center text-primary">6</h3>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        
+                    <h3 class="text-center">Total <br> Closed Claims:</h3>
+                    <h3 class="text-center text-primary">0</h3>
+                    </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-control">
+                <h3>Claim Advance Overview</h3>
+                <div class="row p-2">	
+                    <div class="col-sm-3">
+                        <h3 class="text-center">Total <br> Cash Advance:</h3>
+                        <h3 class="text-center text-primary ">2</h3>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                    
+                    <h3 class="text-center">Total  Pending Cash <br> Advance: </h3>
+                    <h3 class="text-center text-primary">3</h3>
+                    </div>
+        
+                    <div class="col-sm-3">
+                        
+                    <h3 class="text-center">Total Rejected <br> Cash Advance:</h3>
+                    <h3 class="text-center text-primary">6</h3>
+                    </div>
+                    
+                    <div class="col-sm-3">
+                        
+                    <h3 class="text-center">Total Closed <br> Cash Advance:</h3>
+                    <h3 class="text-center text-primary">5</h3>
+                    </div>
+                    </div>
+            </div>
+            <br>
+            <div class="form-control">
+                <div class="card-header">
                     <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
+                        <div class="col d-flex justify-content-start">
+                            <ul class="nav nav-pills">
+                            <li class="nav-item">
+                                <a href="#default-tab-1" data-bs-toggle="tab" class="nav-link active">Claim</a>   
+                            </li>
+                            <li class="nav-item">
+                                <a href="#default-tab-2" data-bs-toggle="tab" class="nav-link ">Cash Advance</a>  
+                            </li>
+                            </ul>
+                        </div>
+                        <div class="col d-flex justify-content-end">
+                            <button class="btn btn-primary"  type="button">Skip the Queue</button>&nbsp;
+                            <button class="btn btn-primary"  type="button">Approve All</button>&nbsp;
+                            <button class="btn btn-primary"  type="button" id="filter"> <i class="fa fa-filter" aria-hidden="true"></i></button>&nbsp;
+                            {{-- <button class="btn btn-primary"  type="button"> <i class='far fa-file-pdf'></i></button>&nbsp; --}}
+                        </div>  
+                    </div>
+                </div>
+                <br>
+                <div id="filteronoff" style="display: none">
+					<div class="form-control">						
+						<div class="row p-2">
+							<div class="col-md-2">	
+                                    <label for="employee name" class="form-label">Employee Name</label>
+                                    <select class="form-select form-select-lg mb-2" aria-label=".form-select-lg example">
+                                    <option  selected value="all_employee">All Employee</option>
+                                    </select>			
+							</div>
+							<div class="col-md-2">
+										<label for="employee name" class="form-label">Month</label>
+										<select class="form-select form-select-lg mb-2" aria-label=".form-select-lg example">
+											<option  selected value="all_employee">Select Month</option>
+                                            <option   value="all_employee">January</option>
+                                            <option   value="all_employee">February</option>
+                                            <option   value="all_employee">Mac</option>
+                                            <option   value="all_employee">April</option>
+                                            <option   value="all_employee">Mei</option>
+                                            <option   value="all_employee">June</option>
+                                            <option   value="all_employee">July </option>
+                                            <option   value="all_employee">August</option>
+                                            <option   value="all_employee">September</option>
+                                            <option   value="all_employee">October</option>
+                                            <option   value="all_employee">November</option>
+                                            <option   value="all_employee">Disember</option>
+                                        </select>
+							</div>
+							<div class="col-md-2">
+										<label for="employee name" class="form-label">Claim Type</label>
+										<select class="form-select form-select-lg mb-2" aria-label=".form-select-lg example">
+											<option  selected value="all_employee">Select Claim Type</option>
+                                            <option   value="all_employee">MTC  </option>
+                                            <option   value="all_employee">GNC  </option>
+                                        </select>						
+							</div>
+							<div class="col-md-2">
+										<label for="employee name" class="form-label">Status</label>
+										<select class="form-select form-select-lg mb-2" aria-label=".form-select-lg example">
+											<option  selected value="">Pending</option>
+											<option value="">Approved</option>
+											<option value="">Rejected</option>
+											<option value="">Amended</option>
+											<option value="">Cancelled</option>
+                                        </select>
+							</div>
+
+                            <div class="col-md-2"></div>
+
+                            <div class="col">
+                                <div class="row-p-2">
+                                    <label for="test"></label>
                                 </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
+                                
+                                <div class="row">
+                                    <button class="btn btn-primary"><i class="fa fa-search" aria-hidden="true"></i> Search</button>
                                 </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
+                            </div>&nbsp;
+
+                            <div class="col">
+                                <div class="row-p-2">
+                                    <label for="test"></label>
+                                </div>
+                                
+                                <div class="row">
+                                    <button class="btn btn-primary">Reset</button>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
                         </div>
-                 </div>
+				    </div>
+				</div>
+                    <div class="tab-content panel p-3 rounded">
+                        <div class="tab-pane fade active show" id="default-tab-1">
+                            {{-- claim approval --}}
+                            <table  id="tableclaimapproval"  class="table table-striped table-bordered align-middle">
+                                <thead>
+                                <tr>
+                                <th  data-orderable="false"></th>	
+                                <th  data-orderable="false">Action</th>
+                                <th class="text-nowrap">Applied Date</th>
+                                <th class="text-nowrap">Employee Name</th>
+                                <th class="text-nowrap">Month</th>
+                                <th class="text-nowrap">Claim ID</th>
+                                <th class="text-nowrap">Claim Type</th>
+                                <th class="text-nowrap">Total Amount</th>
+                                <th class="text-nowrap">Status</th>
+                                <th class="text-nowrap">Status Date</th>
+                                <th class="text-nowrap">Remarks</th> 
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><input type="checkbox" id="" name="" value=""></td>
+                                    <td>
+                                        <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item"  ><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalreject"><i class="fa fa-ban" aria-hidden="true" ></i> Reject</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalamend"><i class="fa fa-reply" aria-hidden="true" ></i> Amend</a>
+                                            <div class="dropdown-divider"></div> 
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+										</div>
+										{{-- appeal --}}
+										<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle" style="display: none"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down" ></i></a>
+                                        <div class="dropdown-menu">
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item"  ><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalreject"><i class="fa fa-ban" aria-hidden="true" ></i> Reject</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalamend"><i class="fa fa-reply" aria-hidden="true" ></i> Amend</a>
+                                            <div class="dropdown-divider"></div> 
+                                            <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+										</div>
+                                    </td>
+                                    <td>03/08/2022</td>
+                                    <td>Nor Alia Ahmad</td>
+                                    <td>July</td>
+                                    <td>101</td>
+                                    <td>MTC</td>
+                                    <td>MYR100.00</td>
+                                    <td>Pending</td>
+                                    <td>22/07/2022</td>
+                                    <td>file not <br> attached</td>
+                                </tr>
+                                <tr>
+                                    <td><input type="checkbox" id="" name="" value=""></td>
+                                    <td>
+                                        <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                        <div class="dropdown-menu">
+                                        <a href="javascript:;" id="" data-id="" class="dropdown-item"  ><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalreject"><i class="fa fa-ban" aria-hidden="true"></i> Reject</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#modalamend"><i class="fa fa-reply" aria-hidden="true" ></i> Amend</a>
+                                        <div class="dropdown-divider"></div> 
+                                        <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+                                        </div>
+                                    </td>
+                                    <td>03/08/2022</td>
+                                    <td>Norlina Marwan</td>
+                                    <td>July</td>
+                                    <td>102</td>
+                                    <td>GNC</td>
+                                    <td>MYR250.00</td>
+                                    <td>Pending</td>
+                                    <td>22/07/2022</td>
+                                    <td>incomplete</td> 
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-pane fade show" id="default-tab-2">
+                            <table  id="tablecashadvance"  class="table table-striped table-bordered align-middle">
+                                <thead>
+                                    <tr>
+                                    <th  data-orderable="false"></th>	
+                                    <th  data-orderable="false">Action</th>
+                                    <th class="text-nowrap">Cash <br> Advance ID</th>
+                                    <th class="text-nowrap">Employee Name</th>
+                                    <th class="text-nowrap">Type of <br> Cash Advance</th>
+                                    <th class="text-nowrap">Request Date</th>
+                                    <th class="text-nowrap">Travel <br> Date</th>
+                                    <th class="text-nowrap"> Amount</th>
+                                    <th class="text-nowrap">Status</th>
+                                    <th class="text-nowrap">Status <br> Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <td><input type="checkbox" id="" name="" value=""></td>
+                                    <td>
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                    <div class="dropdown-menu">
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-ban" aria-hidden="true"></i> Reject</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+                                    </div>
+                                    <td>201</td>
+                                    <td>Marimar</td>
+                                    <td>Project <br> (Outstation)</td>
+                                    <td>20/7/2022</td>
+                                    <td>24/7/2022</td>
+                                    <td>MYR130</td>
+                                    <td>Pending</td>
+                                    <td>21/7/2022</td>
+                                    <tr>
+                                    <td><input type="checkbox" id="" name="" value=""></td>
+                                    <td>
+                                    <a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+                                    <div class="dropdown-menu">
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-check" aria-hidden="true"></i> Approve</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-ban" aria-hidden="true"></i> Reject</a>
+                                    <div class="dropdown-divider"></div>
+                                    <a href="javascript:;" id="" data-id="" class="dropdown-item"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+                                    </div>
+                                    </td>
+                                    <td>202</td>
+                                    <td>Syqfiq</td>
+                                    <td>Other <br> (Non-Outstation)</td>
+                                    <td>14/7/2022</td>
+                                    <td>23/7/2022</td>
+                                    <td>MYR250.00</td>
+                                    <td>Pending</td>
+                                    <td>21/07/2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                      </div>
+                    </div>  
+                  </div>
+                </div>
             </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
+        </div> 
+
+      <!-- Modal reject -->
+      <div class="modal fade" id="modalreject" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reason for Rejection</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
             </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
+            <div class="modal-body">
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">State Reason</label><br>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="input reason"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save</button>
             </div>
           </div>
-        </form>
-                
+        </div>
+      </div>
+
+
+      <!-- Modal amend -->
+      <div class="modal fade" id="modalamend" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Reason for Amendment</h5>
+              <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="row mb-3">
+                        <label for="inputEmail3" class="col-sm-2 col-form-label">State reason</label><br>
+                        <div class="col-sm-10">
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="input reason"></textarea>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary">Save</button>
+            </div>
+          </div>
+        </div>
+      </div>
+         
+      </div>
+
 
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
@@ -673,6 +990,7 @@
 
 
 	<!-- ================== END core-js ================== -->
+
 
 </body>
 </html>
@@ -706,15 +1024,18 @@
 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
-	
 
+
+
+{{-- <script src="../assets/plugins/datatables.net-buttons/js/dataTables.buttons.min.js"></script> 
+<script src="../assets/plugins/datatables.net-buttons-bs5/js/buttons.bootstrap5.min.js"></script>
+<script src="../assets/plugins/datatables.net-buttons/js/buttons.html5.min.js"></script> 
+<script src="../assets/plugins/datatables.net-buttons/js/buttons.print.min.js"></script> --}}
 
 	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
+		
+
 	</script>
+
+	
 

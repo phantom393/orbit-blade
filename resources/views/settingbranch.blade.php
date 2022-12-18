@@ -761,7 +761,6 @@
 								<option value="0" label="Malaysia" selected="selected">Malaysia </option>
 								<option value="1" label="Brunei">Brunei</option>
 								<option value="2" label="Singapore">Singapore</option>
-								
 							</select></div>
 					  </form>
 					</div>

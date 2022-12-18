@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting Add Claim</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,21 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
 
-</style>
 		
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,63 +611,105 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
+	<h1 class="page-header">Setting | Add Claim Category</h1>
 			<div class="panel-body">
 				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
+                   <div class="col-md-6">
+                    <h3>Add Claim Category</h3>
+                    <br>
+                    <form>
+                            <div class="form-group row">
+                                <label for="categorycode" class="col-sm-2 col-form-label">Claim Category Code*</label>
+                                <div class="col">
+                                  <input type="text" class="form-control" id="category_code" name="categorycode" placeholder="Input Claim Category Code">
                                 </div>
+                              </div>
+                              <br>
+                        <div class="form-group row">
+                          <label for="claimcategory" class="col-sm-2 col-form-label">Claim Category*</label>
+                          <div class="col">
+                            <input type="text" class="form-control"  name="claimcategory" id="claim_category" placeholder="Input Claim Category">
+                          </div>
                         </div>
                         <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
+                        <div class="form-group row">
+                            <label for="claimtype" class="col-sm-2 col-form-label">Claim Type*</label>
+                            <div class="col-sm-6">
+                                <div class="row-sm-6">
+                                    <label><input type="checkbox" class="form-check-input" name="" id="" checked>MTC- Monthly Claim</label><br><br>
+                                    <label><input type="checkbox" class="form-check-input" name="" id="" checked>GC- General Claim</label>
                                 </div>
                             </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
+                          </div>
+                          <br>
+                          <div class="form-group row">
+                            <label for="description" class="col-sm-2 col-form-label">Description</label>
+                            <div class="col">
+                                <textarea class="form-control" name="description" id="descriptionn" rows="3" placeholder="Input Description"></textarea>
                             </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
+                          </div>
+                          <button type="button" class="btn btn-white mt-3 mb-3" data-bs-toggle="modal" id="myModal1" data-bs-target="#modaladdcontent"><i class="fa fa-plus"></i> Add Content Category</button>
+                      <table  id="tablesavecontent"  class="table table-striped table-bordered align-middle">
+                        <thead>
+                          <tr>	
+                            <th  data-orderable="false">Action</th>
+                            <th class="text-nowrap">Content</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
                 
+                            </tr>
+                        </tbody>
+                      </table>
+                      <br>
+                   </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col align-self-start">
+                      <button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+                    </div>
+                    
+                    <div class="col d-flex justify-content-end">
+                      <button class="btn btn-light" type="submit" style="color: black"><i class="fa fa-save"></i> Submit</button>
+                    </div>
+                </div>
+            </form>
 
+
+            <!-- Modal -->
+<div class="modal fade" id="modaladdcontent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add Content</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Subsistence Allowance</label><br>
+					<div class="col-sm-6">
+                        <input type="text" class="form-control" id="" placeholder="Malaysia" readonly >
+                    </div>
+                </div>
+				<div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Content</label><br>
+					<div class="col-sm-6">
+					<input type="text" class="form-control" id="addcontent" value="content1">
+        </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="savecontent" class="btn btn-primary" data-bs-dismiss="modal">Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -708,13 +757,59 @@
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
 	
 
-
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
+<script>
+	$(document).ready(function () {
+        $('#tablesavecontent')
+                .dataTable({
+                    "responsive": true,
+                    "bLengthChange": false,
+                    "bFilter": false,
+                    "info": false,
+                });
+        
     });
-	</script>
+
+$("#savecontent").click(function() {
+
+var addtypelogactivityName = document.getElementById('addcontent').value;
+
+if (addtypelogactivityName == "") {
+document.getElementById('addcontent');
+return;
+} else {
+
+let table = document.getElementById('tablesavecontent');
+// Insert a row at the end of the table
+let newRow = table.insertRow(-1);
+var l = table.rows.length - 1;
+
+//Col 3 = Delete Button
+table.rows[l].insertCell(0);
+table.rows[l].cells[0].innerHTML = "<input hidden name='Area' value='" + addtypelogactivityName + "' /><button type='button' class='btn btn-outline-danger' onclick='delRow(this);' id='btnDelete' size='1' height='1' ><i class='fa fa-trash'></i></button>";
+
+
+//Col 1 = addtypelogactivityName
+table.rows[l].insertCell(1);
+table.rows[l].cells[1].innerHTML = addtypelogactivityName;
+
+
+
+
+//Clear input
+
+
+}
+});
+
+
+function delRow(btn) {
+var row = btn.parentNode.parentNode;
+row.parentNode.removeChild(row);
+}
+
+function editRow() {
+    $('#subsistencemodal').modal('show');
+}
+</script>
+
 

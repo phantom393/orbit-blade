@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Update Entitlement</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,25 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
 
-</style>
-		
+/* div{
+
+margin-top: 10px;
+
+}	 */
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,63 +615,387 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
+	<h1 class="page-header">Settings | Update Entitlement Group</h1>
 			<div class="panel-body">
 				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
+                    <h5>Update Entitlement Group</h5>
+                      <form>
+                       <div class="row">
+                        <div class="col mb-6">
                             <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
+                                <label for="uentitlementgroupname" class="col-sm col-form-label">Entitlement Group Name*</label>
+                                <div class="col">
+                                  <input type="text" class="form-control" name="uentitlementgroupname" id="uentitlement_groupname" placeholder="Entitlement Group Name">
                                 </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
+                              </div>
+                              <br>
+                              <div class="row">
+                                    <label for="ujobgrade" class="col-sm col-form-label">Job Grade*</label>
+                                    <div class="col">
+                                        <input type="text" class="form-control" name="ujobgrade" id="u_jobgrade" placeholder="Type for hints...">
+                                    </div>
+                              </div>
+                              <br>
+                              <div class="row">
+                                <div class="col">
+                                    <h6>Local Travelling*</h6>
                                 </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Local" id="flexRadiouF" checked>
+                                            <label class="form-check-label" for="flexRadiouF">
+                                            F- First Class
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Local" id="flexRadiouC" >
+                                            <label class="form-check-label" for="flexRadiouC">
+                                            C- Business Class
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Local" id="flexRadiouY" >
+                                            <label class="form-check-label" for="flexRadiouY">
+                                            Y - First Class
+                                            </label>
+                                        </div>
+                                    </div>
+                              </div>
+                              <br>
+                              <div class="row">
+                                <div class="col">
+                                    <h6>Overseas Travelling*</h6>
+                                </div>
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Overseas" id="flexRadioouF">
+                                            <label class="form-check-label" for="flexRadioouF">
+                                            F- First Class
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Overseas" id="flexRadioouC" checked>
+                                            <label class="form-check-label" for="flexRadioouC">
+                                            C- Business Class
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="Overseas" id="flexRadioouY" >
+                                            <label class="form-check-label" for="flexRadioouY">
+                                            Y - First Class
+                                            </label>
+                                        </div>
+                                    </div>
+                              </div>       
                         </div>
-                        </div>
-                        <div class="col"> 
+                        <div class="col mb-6">
                             <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
+                                <label for="ulodgingallowance" class="col-sm-3 col-form-label">Lodging Allowance</label>
+                                <div class="col-sm-3">
+                                    <select class="form-select" id="" name="" aria-label="Disabled select example">
+                                        <option selected>None</option>
+                                        <option value="actual">Actual</option>
+                                        <option value="inputvalue">Input Value</option>
+                                      </select>
                                 </div>
                             </div>
                             <br>
                             <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
+                                <label for="localhotelallowance" class="col-sm-3 col-form-label">Local Hotel Allowance</label>
+                                <div class="col-sm-3">
+                                    <select class="form-select" id="" name="" aria-label="Disabled select example">
+                                        <option >None</option>
+                                        <option value="actual">Actual</option>
+                                        <option selected value="inputvalue">Input Value</option>
+                                      </select>
+                                </div>
+                                <div class="col-sm-3">
+                                    <input type="text" class="form-control" id="inputPassword" value="150">
+                                </div>
                             </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+                            <br>
+                              <div class="row">
+                                    {{-- <label for="inputEmail3" class="col-sm col-form-label">Car Mileage Claim*</label> --}}
+                                    <label for="ucarmileageclaim" class="col-sm-3 col-form-label">Car Mileage Claim* <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltip1" title="Mileage claim  for own car only & with prior approval&#010; from supervisor.&#010; if leave blank KM field, it will assume as no limit.&#010; Click the &quot;+&quot; button to add the subsequent KM and rate.&#010;Click the &quot;-&quot; button to remove the subsequent KM and rate"></i></label>
+                                        <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="ucarmileagecharge" value="0.7">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" class="form-control" id="ucarmileagekm" value="700">
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="ukm1" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusbtn" type="button"><i class="fa fa-plus"></i> </button>
+                                        <button id="uminusbtn" type="button" style="display: none;" ><i class="fa fa-minus"></i> </button>
+                                    </div>
+                              </div>
 
+                              <br>
+                                <div class="row">
+                                    {{-- <label for="inputEmail3" class="col-sm col-form-label">Car Mileage Claim*</label> --}}
+                                    <label for="staticEmail" class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                        <input style="display: none;" type="text" class="form-control" id="umileagecharge1">
+                                        </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" style="display: none;"  class="form-control" id="umileagekm1" >
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="ukm2" style="display: none;" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusbtn1" type="button" style="display: none;"><i class="fa fa-plus"></i> </button>
+                                        <button id="uminusbtn1" type="button" style="display: none;"><i class="fa fa-minus"></i> </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    {{-- <label for="inputEmail3" class="col-sm col-form-label">Car Mileage Claim*</label> --}}
+                                    <label for="staticEmail" class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                        <input  type="text" style="display: none;" class="form-control" id="umileagecharge2"  >
+                                        </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" style="display: none;"  class="form-control" id="umileagekm2" >
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="ukm3" style="display: none;" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusbtn2" type="button" style="display: none;" ><i class="fa fa-plus"></i> </button>
+                                        <button id="uminusbtn2" type="button" style="display: none;" ><i class="fa fa-minus"></i> </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    {{-- <label for="inputEmail3" class="col-sm col-form-label">Car Mileage Claim*</label> --}}
+                                    <label for="staticEmail" class="col-sm-3 col-form-label">Motorcycle Mileage <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)" data-toggle="tooltip2" title="Mileage claim  for own motorcycle only & with prior approval&#010; from supervisor.&#010; if leave blank KM field, it will assume as no limit.&#010; Click the &quot;+&quot; button to add the subsequent KM and rate.&#010;Click the &quot;-&quot; button to remove the subsequent KM and rate"></i> claim* </label>
+                                        <div class="col-sm-3">
+                                        <input  type="text"  class="form-control" id="uumileagemcharge" value="0.40" >
+                                        </div>
+                                    <div class="col-sm-3">
+                                        <input type="text"   class="form-control" id="umileagemkm" value="700" >
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="mkm1" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusmbtn" type="button"><i class="fa fa-plus" aria-hidden="true"></i> </button>
+                                        <button id="uminusmbtn" style="display: none;" type="button"><i class="fa fa-minus"></i> </button>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label for="staticEmail" class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                        <input  type="text" style="display: none;" class="form-control" id="umileagemcharge1"  >
+                                        </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" style="display: none;"  class="form-control" id="umileagemkm1" >
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="mkm2" style="display: none;" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusmbtn1" type="button" style="display: none;" ><i class="fa fa-plus"></i> </button>
+                                        <button id="uminusmbtn1" type="button" style="display: none;" ><i class="fa fa-minus"></i> </button>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="row">
+                                    {{-- <label for="inputEmail3" class="col-sm col-form-label">Car Mileage Claim*</label> --}}
+                                    <label for="staticEmail" class="col-sm-3 col-form-label"></label>
+                                        <div class="col-sm-3">
+                                        <input  type="text" style="display: none;" class="form-control" id="umileagemcharge2"  >
+                                        </div>
+                                    <div class="col-sm-3">
+                                        <input type="text" style="display: none;"  class="form-control" id="umileagemkm2"  >
+                                    </div>
+                                    <div class="col">
+                                        <h5 class="form-control" id="mkm3" style="display: none;" aria-readonly="true">KM</h5>
+                                    </div>
+                                    <div class="col">
+                                        <button id="uplusmbtn2" type="button" style="display: none;" ><i class="fa fa-plus"></i> </button>
+                                        <button id="uminusmbtn2" type="button" style="display: none;" ><i class="fa fa-minus"></i> </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                       <div class="row">
+                        <div class="col align-self-start">
+                          <button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-arrow-left"></i> Back</button>
+                        </div>
+                        
+                        <div class="col d-flex justify-content-end">
+                          <button class="btn btn-light" style="color: black" type="submit"><i class="fa fa-save"></i> Update</button>
+                        </div>
+                      </div>
+                    </form>
+                </div>
+                <br>
+             <div class="row">
+              <div class="col">
+                <div class="panel-body">
+                    <div class="form-control">
+                        <h5>Subsistence Allowance</h5>
+                        <table  id="tablesavesubsistence"  class="table table-striped table-bordered align-middle">
+							<thead>
+							  <tr>	
+								<th  data-orderable="false">Action</th>
+								<th class="text-nowrap">Area</th>
+                                <th class="text-nowrap">Value</th>
+							  </tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editsubsistence" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+									</td>
+                                    <td>MALAYSIA</td>
+                                    <td>60</td>
+								</tr>
+
+                                <tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editsubsistence" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+                                       
+									</td>
+                                    <td>MIDDLE EAST</td>
+                                    <td>170</td>
+								</tr>
+
+                                <tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editsubsistence" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+                                       
+									</td>
+                                    <td>SINGAPORE/BRUNEI</td>
+                                    <td>80</td>
+								</tr>
+							</tbody>
+						  </table>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col">
+                <div class="panel-body">
+                    <div class="form-control">
+                        <h5>Claim Benefits</h5>
+                        <table  id="tableSaveArea"  class="table table-striped table-bordered align-middle">
+							<thead>
+							  <tr>	
+								<th  data-orderable="false">Action</th>
+								<th class="text-nowrap">Area</th>
+                                <th class="text-nowrap">Value</th>
+							  </tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editclaimbenefit" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+									</td>
+                                    <td>ENTERTAINMENT</td>
+                                    <td>60</td>
+								</tr>
+
+                                <tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editclaimbenefit" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+									</td>
+                                    <td>PHONE BILL</td>
+                                    <td>170</td>
+								</tr>
+
+                                <tr>
+									<td>
+										<a href="javascript:;" data-toggle="modal" data-bs-toggle="modal" data-bs-target="#editclaimbenefit" class="btn btn-outline-blue" ><i class="fa fa-edit"></i></a> 
+									</td>
+                                    <td>OTHERS</td>
+                                    <td>80</td>
+								</tr>
+							</tbody>
+						  </table>
+                    </div>
+                </div>
+              </div>
+            </div>
+
+<!-- Modal subsistence -->
+<div class="modal fade" id="editsubsistence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Subsistence Allowance</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Subsistence Allowance</label><br>
+					<div class="col-sm-6">
+                        <input type="text" class="form-control" id="" placeholder="Malaysia" readonly >
+                    </div>
+                </div>
+                <div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Value</label><br>
+					<div class="col-sm-6">
+                        <input type="text" class="form-control" id="valuesubsistence1" placeholder="value">
+                        <input type="checkbox" class="unlimited" value="unlimited">unlimited
+                    </div>
+                </div>
+				
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="savesubsistence" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+
+
+{{-- modal claim --}}
+  <div class="modal fade" id="editclaimbenefit" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Claims Benefit</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="row mb-3">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Area</label><br>
+					<div class="col-sm-6">
+                        <input type="text" class="form-control" id="" placeholder="Entertainment" readonly >
+                    </div>
+                </div>
+                <div class="row mb-3">
+					<label for="value" class="col-sm-2 col-form-label">Value</label><br>
+					<div class="col-sm-6">
+                        <input type="text" class="form-control" id="valueclaim1" placeholder="value">
+                        <input type="checkbox" class="unlimited1" value="unlimited">unlimited
+                    </div>
+                </div>
+				
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" id="savesubsistence" class="btn btn-primary">Save changes</button>
+        </div>
+    </form>
+      </div>
+    </div>
+  </div>
+				
+		
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -709,12 +1044,119 @@
 	
 
 
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
+<script>
+$(document).ready(function(){
+        //car 
+        $("#uplusbtn").click(function(){
+        $("#umileagecharge1").show();
+        $("#umileagekm1").show();
+        $("#uminusbtn").show();
+        $("#uminusbtn1").show();
+        $("#uplusbtn1").show();
+        $("#ukm2").show();
+        $("#uminusbtn").prop('disabled', true);
+        });
+
+        $("#uplusbtn1").click(function(){
+        $("#umileagecharge2").show();
+        $("#umileagekm2").show();
+        $("#uminusbtn2").show();
+        $("#ukm3").show();
+        $("#uminusbtn1").prop('disabled', true);
+        });
+
+        $("#uminusbtn1").click(function(){
+        $("#umileagecharge1").hide();
+        $("#umileagekm1").hide();    
+        $("#uplusbtn1").hide();
+        $("#uminusbtn1").hide();
+        $("#uminusbtn").hide();
+        $("#ukm2").hide();
+        $("#uminusbtn").prop('disabled', false);
+        });
+
+        $("#uminusbtn").click(function(){
+        $("#umileagecharge1").hide();
+        $("#umileagekm1").hide();
+        });
+
+        $("#uminusbtn2").click(function(){
+        $("#umileagecharge2").hide();
+        $("#umileagekm2").hide();
+        $("#uminusbtn2").hide();
+        $("#ukm3").hide();
+        $("#uminusbtn1").prop('disabled', false);
+        });
+
+        //motor
+        $("#uplusmbtn").click(function(){
+        $("#umileagemcharge1").show();
+        $("#umileagemkm1").show();
+        $("#uminusmbtn").show();
+        $("#uminusmbtn1").show();
+        $("#uplusmbtn1").show();
+        $("#umkm2").show();
+        $("#uminusmbtn").prop('disabled', true);
+        });
+
+        $("#uplusmbtn1").click(function(){
+        $("#umileagemcharge2").show();
+        $("#umileagemkm2").show();
+        $("#uminusmbtn2").show();
+        $("#umkm3").show();
+        $("#uminusmbtn1").prop('disabled', true);
+        });
+
+        $("#uminusmbtn1").click(function(){
+        $("#umileagemcharge1").hide();
+        $("#umileagemkm1").hide();    
+        $("#uplusmbtn1").hide();
+        $("#uminusmbtn1").hide();
+        $("#uminusmbtn").hide();
+        $("#umkm2").hide();
+        $("#uminusmbtn").prop('disabled', false);
+        });
+
+        $("#uminusmbtn").click(function(){
+        $("#umileagemcharge1").hide();
+        $("#umileagemkm1").hide();
+        });
+
+        $("#uminusmbtn2").click(function(){
+        $("#umileagemcharge2").hide();
+        $("#umileagemkm2").hide();
+        $("#uminusmbtn2").hide();
+        $("#umkm3").hide();
+        $("#uminusmbtn1").prop('disabled', false);
+        });
+
+        $('[data-toggle="tooltip1"]').tooltip();  
+		$('[data-toggle="tooltip2"]').tooltip();
+
+        $('.unlimited').click(function() {
+          var text = "";
+        $('.unlimited:checked').each(function() {
+            text+=$(this).val()+ ',';
+        });
+        text=text.substring(0,text.length-1);
+        $('#valuesubsistence1').val(text);
+        var count = $("[type='checkbox']:checked".length);
+        $('#count').val($("[type='checkbox']:checked").length); 
+      });
+
+
+      $('.unlimited1').click(function() {
+          var text = "";
+        $('.unlimited1:checked').each(function() {
+            text+=$(this).val()+ ',';
+        });
+        text=text.substring(0,text.length-1);
+        $('#valueclaim1').val(text);
+        var count = $("[type='checkbox']:checked".length);
+        $('#count').val($("[type='checkbox']:checked").length); 
+      });
+
+        });
+</script>
+
 

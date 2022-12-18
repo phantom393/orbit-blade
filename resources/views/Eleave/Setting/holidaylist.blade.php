@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
 	<meta charset="utf-8" />
-	<title>OrbitHRM | Setting Claims Date</title>
+	<title>OrbitHRM | Setting E Leave Holiday</title>
 	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
 	<meta content="" name="description" />
 	<meta content="" name="author" />
@@ -25,14 +25,20 @@
 	<link href="../assets/plugins/datatables.net-responsive-bs5/css/responsive.bootstrap5.min.css" rel="stylesheet" />
 
 
+	{{-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> --}}
+	{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	 --}}
+
 
 	
 	
 	<!-- ================== END page-css ================== -->
 	<style>
-
-</style>
-		
+	
+		</style>
+		</head>
+		<body>
 </head>
 <body>
 	<!-- BEGIN #loader -->
@@ -604,63 +610,311 @@
 	
 	<!-- END breadcrumb -->
 	<!-- BEGIN page-header -->
-	<h1 class="page-header">Setting | Claims Date</h1>
-			<div class="panel-body">
-				<div class="form-control">	
-					<h3>Configure Claim Date</h3>
-					<br>
-					<form>  
-                    <div class="row">
-                        <div class="col">
-                            <div class="row">
-                                <label for="submitClaim" class="col-sm-5 col-form-label">Submit Claim to Admin on Every :<i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Admin approver
-                                    "></i></label>
-                                    <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="submitclaim" id="submit_claim" value="8">
-                                </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                                <label for="expiredate" class="col-sm-5 col-form-label">Claim Expiration Date <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipexpiredate" title="User can decide the date the claim batch 
-                                    should be renewed"></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="expiredate" id="expire_date" value="1">
-                                </div>
-                        </div>
-                        </div>
-                        <div class="col"> 
-                            <div class="row">
-                                <label for="claimfinance" class="col-sm-5 col-form-label">Submit Claim to Finance on Every: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipsubmitclaim" title="Setup the claim batch date that should be 
-                                    moved to Finance approver
-                                    "></i></label>
-                                <div class="col-sm-2">
-                                    <input type="number" class="form-control" name="claimfinance" id="claim_finance" value="13">
-                                </div>
+	<h1 class="page-header">Setting | Holiday</h1>
+			<div class="panel panel">
+				<div class="panel-body">
+					<div class="form-control">
+						<div class="row p-2">
+							<h3>Holiday List</h3>
+						</div>
+						<div class="row p-2 ">
+							<div class="col align-self-start">                    
+                                <button class="btn btn-primary" data-bs-toggle="modal" id="myModal1" data-bs-target="#addleave"> <i class="fa fa-plus" aria-hidden="true"></i> Holiday </button>
+                                <button class="btn btn-primary " data-bs-toggle="modal" id="myModal1" data-bs-target="#uploadbulk"> <i class="fa fa-upload" aria-hidden="true"></i></i> Bulk Upload</button>
                             </div>
-                            <br>
-                            <div class="row">
-                                <label for="claimsubmit" class="col-sm-5 col-form-label">Final Claim Submit Date: <i class="fa fa-question-circle" style="color:rgba(0, 81, 255, 0.904)"   data-toggle="tooltipclaimsubmit" title="User can decide on the final submit claim date"></i></label>
-                            <div class="col-sm-2">
-                                <input type="number" class="form-control" name="claimsubmit" id="claim_submit" value="7"><br>
-                            </div>
-                        </div>     
-                        </div>
-                 </div>
-            </div>
-          <br>
-          <div class="row">
-            <div class="col align-self-start">
-              <button class="btn btn-light" style="color: black" type="submit" name="" id=""><i class="fa fa-arrow-left"></i> Back</button>
-            </div>
-            
-            <div class="col d-flex justify-content-end">
-              <button class="btn btn-light" type="submit" style="color: black" name="" id=""><i class="fa fa-save"></i> Submit</button>
-            </div>
-          </div>
-        </form>
-                
+						</div>
+						<div class="row p-2">
+							<table  id="tabletype"  class="table table-striped table-bordered align-middle">
+								<thead>
+								  <tr>	
+									<th width="1%" class="text-nowrap">Action</th>
+									<th class="text-nowrap">Status</th>
+                                    <th class="text-nowrap">Holiday Title</th>
+									<th class="text-nowrap">Start Date</th>
+									<th class="text-nowrap">End Date</th>
+                                    <th class="text-nowrap">Annual Holiday</th>
+								  </tr>
+								</thead>
+								<tbody>
+								  	<tr>
+										<td>
+											<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+											<div class="dropdown-menu">
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" id="myModal1" data-bs-target="#updateleave"  ><i class="fa fa-edit" aria-hidden="true"></i> Update</a>
+												<div class="dropdown-divider"></div>
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+											</div>
+										</td>
+										<td> 
+											<div class="form-check form-switch">
+												<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id=""  checked>
+											</div>
+										</td>
+										<td>National </td>
+										<td>31/08/2022 </td>
+                                        <td>01/08/2022 </td>
+                                        <td>Yes </td>
+								  	</tr>
+                                      <tr>
+										<td>
+											<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+											<div class="dropdown-menu">
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" id="myModal1" data-bs-target="#updateleave"  ><i class="fa fa-edit" aria-hidden="true"></i> Update</a>
+												<div class="dropdown-divider"></div>
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+											</div>
+										</td>
+										<td> 
+											<div class="form-check form-switch">
+												<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id=""  checked>
+											</div>
+										</td>
+										<td>Wesak Day </td>
+										<td>03/05/2022 </td>
+                                        <td>04/05/2022</td>
+                                        <td>No </td>
+								  	</tr>
+                                      <tr>
+										<td>
+											<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+											<div class="dropdown-menu">
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" id="myModal1" data-bs-target="#updateleave"  ><i class="fa fa-edit" aria-hidden="true"></i> Update</a>
+												<div class="dropdown-divider"></div>
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+											</div>
+										</td>
+										<td> 
+											<div class="form-check form-switch">
+												<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id=""  checked>
+											</div>
+										</td>
+										<td>Eid Al-Fitr </td>
+										<td>02/05/2022 </td>
+                                        <td>04/05/2022 </td>
+                                        <td>Yes </td>
+								  	</tr>
+                                      <tr>
+										<td>
+											<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+											<div class="dropdown-menu">
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" id="myModal1" data-bs-target="#updateleave"  ><i class="fa fa-edit" aria-hidden="true"></i> Update</a>
+												<div class="dropdown-divider"></div>
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+											</div>
+										</td>
+										<td> 
+											<div class="form-check form-switch">
+												<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id=""  checked>
+											</div>
+										</td>
+										<td> Labour Day </td>
+										<td>01/04/2022 </td>
+                                        <td>02/04/2022 </td>
+                                        <td>Yes </td>
+								  	</tr>
+                                      <tr>
+										<td>
+											<a href="#" data-bs-toggle="dropdown" class="btn btn-primary dropdown-toggle"><i class="fa fa-cogs"></i> Action <i class="fa fa-caret-down"></i></a>
+											<div class="dropdown-menu">
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" data-bs-toggle="modal" id="myModal1" data-bs-target="#updateleave"  ><i class="fa fa-edit" aria-hidden="true"></i> Update</a>
+												<div class="dropdown-divider"></div>
+												<a href="javascript:;" id="" data-id="" class="dropdown-item" ><i class="fa fa-trash" aria-hidden="true"></i> Delete</a>
+											</div>
+										</td>
+										<td> 
+											<div class="form-check form-switch">
+												<input class="form-check-input"   name="mainCompanion"  type="checkbox" role="switch" id=""  checked>
+											</div>
+										</td>
+										<td>Lunar New Year </td>
+										<td>01/01/2022 </td>
+                                        <td>01/01/2022 </td>
+                                        <td>Yes </td>
+								  	</tr>
+								</tbody>
+							  </table>
+						</div>
+					</div>
+				</div>
+			</div>
 
+
+{{-- modal add holiday --}}
+<div class="modal fade" id="addleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Add Holiday</h5>
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+                    <div class="row p-2">
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="holidaytitle" class="form-label">Holiday Title* </label>
+                                <input type="email" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <div class="row ">
+                                    <span class="form-label">Set as annual holiday</span>
+                                </div>
+                                <div></div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radioyes">
+                                    <label class="form-check-label" for="radioyes">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="radiono" checked>
+                                    <label class="form-check-label" for="radiono">
+                                      No
+                                    </label>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Start Date* </label>
+                                <input type="text" class="form-control" id="datepickerstart">
+                            </div>
+                        </div>
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">End Date* </label>
+                                <input type="text" class="form-control" id="datepickerend" />
+                            </div>
+                        </div>
+                    </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+{{-- modal updateleave type --}}
+<div class="modal fade" id="updateleave" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Update Holiday</h5>
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+                    <div class="row p-2">
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="holidaytitle" class="form-label">Holiday Title* </label>
+                                <input type="email" class="form-control" id="">
+                            </div>
+                        </div>
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <div class="row ">
+                                    <span class="form-label">Set as annual holiday</span>
+                                </div>
+                                <div></div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="uradioyes">
+                                    <label class="form-check-label" for="uradioyes">
+                                      Yes
+                                    </label>
+                                  </div>
+                                  <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="uradiono" checked>
+                                    <label class="form-check-label" for="uradiono">
+                                      No
+                                    </label>
+                                  </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row p-2">
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Start Date* </label>
+                                <input type="text" class="form-control" id="udatepickerstart">
+                            </div>
+                        </div>
+                        <div class="col md-6">
+                            <div class="mb-3">
+                                <label for="" class="form-label">End Date* </label>
+                                <input type="text" class="form-control" id="udatepickerend" />
+                            </div>
+                        </div>
+                    </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Update</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{{-- modal bulk --}}
+<div class="modal fade" id="uploadbulk" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">Bulk Upload Holiday</h5>
+				<button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+				  <span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<form>
+                    <div class="row p-2">
+                        <a href="" download="Holiday.xlsx">Holiday.xlx</a>
+                    </div>
+                    <div class="row p-2">
+                        <div class="file-upload-wrapper">
+                            <input type="file" id="input-file-now" class="file-upload" />
+                        </div>
+                    </div>
+
+                    {{-- <div id="dropzone">
+                        <form action="/upload" class="dropzone needsclick" id="demo-upload">
+                          <div class="dz-message needsclick">
+                            Drop files <b>here</b> or <b>click</b> to upload.<br />
+                            <span class="dz-note needsclick">
+                              (This is just a demo dropzone. Selected files are <strong>not</strong> actually uploaded.)
+                            </span>
+                          </div>
+                        </form>
+                      </div> --}}
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Save</button>
+			</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+	
 		<!-- BEGIN scroll-top-btn -->
 		<a href="javascript:;" class="btn btn-icon btn-circle btn-success btn-scroll-to-top" data-toggle="scroll-to-top"><i class="fa fa-angle-up"></i></a>
 		<!-- END scroll-top-btn -->
@@ -673,6 +927,7 @@
 
 
 	<!-- ================== END core-js ================== -->
+
 
 </body>
 </html>
@@ -706,15 +961,58 @@
 	<script src="/assets/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
 	<link href="/assets/plugins/jstree/dist/themes/default/style.min.css" rel="stylesheet" />
 	<script src="/assets/plugins/jstree/dist/jstree.min.js"></script>
+
+
+    <!-- required files for drop upload -->
+<link href="../assets/plugins/dropzone/dist/min/dropzone.min.css" rel="stylesheet" />
+<script src="../assets/plugins/dropzone/dist/min/dropzone.min.js"></script>
+
+
+
+<script>
+	$(document).ready(function () {
+			$('#tabletype')
+					.dataTable({
+						"responsive": false,
+						"bLengthChange": false,
+						"bFilter": true,
+					});
+	});
+</script>
+
+<script>
+
+	$("#datepickerstart").datepicker({
+    todayHighlight: true,
+    autoclose: true
+  });
+
+  $("#datepickerend").datepicker({
+    todayHighlight: true,
+    autoclose: true
+  });
+
+  //
+  $("#udatepickerstart").datepicker({
+    todayHighlight: true,
+    autoclose: true
+  });
+
+  $("#udatepickerend").datepicker({
+    todayHighlight: true,
+    autoclose: true
+  });
+
+</script>
+
+<script>
+    // $('.file-upload').file_upload();
+
+//     $('a.yourlink').click(function(e) {
+//     e.preventDefault();
+//     window.open('C:\Users\azrul\Desktop\Holiday.xlsx'); // it will open download of filepath
+
+// });
+</script>
 	
-
-
-	<script>
-		$(document).ready(function(){
-        $('[data-toggle="tooltipclaimsubmit"]').tooltip();  
-		$('[data-toggle="tooltipsubmitclaim"]').tooltip();
-        $('[data-toggle="tooltipexpiredate"]').tooltip();
-        $('[data-toggle="tooltipsubmitclaim"]').tooltip();
-    });
-	</script>
 
